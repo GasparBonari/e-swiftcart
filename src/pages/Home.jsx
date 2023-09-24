@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Products from '../components/Products';
+import Products from '../components/Slider';
 import { fetchProducts } from '../api';
 function Home() {
   const [products, setProducts] = useState([]);

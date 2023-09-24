@@ -31,11 +31,6 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -55,15 +50,98 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Nav-bar */
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbar-menu{
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-links{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.navbar-search{
+  display: flex;
+}
+
+/* Slider */
+
+/* Container for the entire slider component */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Heading for the product list */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Container for the slider and navigation buttons */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual slide */
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Image in each slide */
+.slide img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Product name text */
+.slide p {
+  font-size: 18px;
+}
+
+/* Navigation buttons */
+.slider-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: #0056b3;
+}
+
+/* Center the buttons vertically with the slide */
+.slider-button:first-child {
+  align-self: center;
+  margin-right: auto;
+}
+
+.slider-button:last-child {
+  align-self: center;
+  margin-left: auto;
 }
