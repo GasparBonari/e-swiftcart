@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import { fetchProducts } from '../api';
+
 function Home() {
   const [products, setProducts] = useState([]);
 

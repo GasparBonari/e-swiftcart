@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import MobileMenu from './MobileMenu'; // Import the MobileMenu component
+import MobileMenu from './MobileMenu';
+import '../styles/navBar.css'
 import closeImage from '../images/close.png';
 import HamburgerIcon from '../images/hamburger-icon.png';
+import Logo from '../images/logo.png';
 
 function Navbar() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -15,7 +17,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <a href="/">E-Commerce Store</a>
+        <img href="/" src={Logo}></img>
       </div>
 
       {/* Conditional rendering of the hamburger or close icon */}
@@ -43,7 +45,7 @@ function Navbar() {
 
       <div className={`navbar-search ${searchVisible ? 'show-search' : ''}`}>
         <input type="text" placeholder="Search" />
-        <button type="submit"><i className="fas fa-search"></i></button>
+        <button type="submit">Go</button>
       </div>
     </nav>
   );
