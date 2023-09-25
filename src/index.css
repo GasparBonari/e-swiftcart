@@ -25,10 +25,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
 button {
@@ -51,97 +48,167 @@ button:focus-visible {
 }
 
 /* Nav-bar */
-
-.navbar{
+.navbar {
+  position: absolute; /* Position the navbar */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0); /* Add a semi-transparent background for the navbar */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  z-index: 999; /* Ensure the navbar is above other elements */
 }
 
-.navbar-menu{
+.navbar-menu {
   display: flex;
   flex-direction: row;
 }
 
-.navbar-links{
+.navbar-links {
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
 
-.navbar-search{
+.navbar-search {
   display: flex;
 }
 
-/* Slider */
+/* Hamburger Icon for Small Screens */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 99999;
+}
 
-/* Container for the entire slider component */
-.slider-container {
+/* Close Icon for Small Screens */
+.close {
+  cursor: pointer;
+  z-index: 99999;
+}
+
+.hamburger img,
+.close  img{
+  width: 20px;
+}
+
+/* Show menu and search for small screens */
+.show-menu .navbar-links,
+.show-search .navbar-search {
+  display: flex;
+}
+
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -150%; /* Initially hidden off-screen */
+  width: 100%; /* Adjust width as needed */
+  height: 100%;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 20px;
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
 }
 
-/* Heading for the product list */
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.mobile-menu.open {
+  left: 0; /* Slide in from the left when open */
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
-/* Container for the slider and navigation buttons */
-.slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Individual slide */
-.slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Image in each slide */
-.slide img {
-  max-width: 100%;
-  height: auto;
+.mobile-menu ul li {
   margin-bottom: 10px;
 }
 
-/* Product name text */
-.slide p {
-  font-size: 18px;
+.mobile-search {
+  display: flex;
+  justify-content: center;
 }
 
-/* Navigation buttons */
-.slider-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 16px;
+/* Hide regular links when the mobile menu is open */
+.navbar-links.hide {
+  display: none;
+}
+
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* Hide links on small screens */
+  }
+
+  .navbar-search {
+    display: none; /* Hide search bar on small screens */
+  }
+
+  /* Show hamburger icon on small screens */
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Header */
+
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: #ffffff;
+  z-index: 3;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.header-content p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.button-container button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: border-color 0.25s;
+  margin-right: 10px;
 }
 
-.slider-button:hover {
-  background-color: #0056b3;
+.button-container button:last-child {
+  margin-right: 0;
 }
 
-/* Center the buttons vertically with the slide */
-.slider-button:first-child {
-  align-self: center;
-  margin-right: auto;
-}
-
-.slider-button:last-child {
-  align-self: center;
-  margin-left: auto;
+/* Header image */
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire header */
+  object-position: center; /* Centers the image within the header */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }

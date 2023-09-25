@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Products from '../components/Slider';
+import Header from '../components/Header';
 import { fetchProducts } from '../api';
 function Home() {
   const [products, setProducts] = useState([]);
@@ -19,8 +19,7 @@ function Home() {
 
   return (
     <div>
-      <h1>Welcome to E-SwitfCart</h1>
-      <Products />
+      <Header />
     </div>
   );
 }
