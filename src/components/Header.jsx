@@ -1,10 +1,12 @@
 import React from 'react';
-import '../styles/header.css'
+import '../styles/header.css';
 import headerImage from '../images/header.jpg';
 
-const Header = () => {
+function Header()
+{
   return (
-    <header className="header">
+    <header className="header-container">
+      <img src={headerImage} alt="Header Image" className="header-image" />
       <div className="header-content">
         <h1>SwiftCart</h1>
         <p>The web to find any product you want</p>
@@ -13,11 +15,6 @@ const Header = () => {
           <button>About Us</button>
         </div>
       </div>
-      <img
-        src={headerImage}
-        alt="Header Image"
-        className="header-image"
-      />
     </header>
   );
 };

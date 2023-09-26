@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import { fetchProducts } from '../api';
+import Brands from '../components/Brands';
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -21,6 +22,7 @@ function Home() {
   return (
     <div>
       <Header />
+      <Brands />
     </div>
   );
 }
