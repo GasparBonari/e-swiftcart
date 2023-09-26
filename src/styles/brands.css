@@ -1,19 +1,17 @@
 .carousel-container {
-    max-width: 1000px; /* Adjust the maximum width as needed */
-    margin: 20px auto; /* Add margin to create space below the header */
+    max-width: 1000px;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #fff; /* Optional background color for the container */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional box shadow for styling */
+    background-color: #fff; 
 }
 
 .carousel-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 10px; /* Adjust the horizontal padding as needed */
 }
   
 .carousel-item img {
-    max-height: 100px; /* Adjust the maximum height as needed */
-    width: auto; /* Allow the logos to adjust their width */
+    max-height: 100px; 
+    width: auto;
 }

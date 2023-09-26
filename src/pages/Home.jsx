@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import { fetchProducts } from '../api';
 import Brands from '../components/Brands';
+import Offers from '../components/Offers';
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -23,6 +24,7 @@ function Home() {
     <div>
       <Header />
       <Brands />
+      {/* <Offers /> */}
     </div>
   );
 }

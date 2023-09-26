@@ -20,12 +20,13 @@ function Brands()
   const settings = {
     infinite: true,
     slidesToShow: 4,
-    slidesToScroll: 1,
     autoplay: true,
-    speed: 2000, 
+    speed: 2000, // Reduce the speed to create a smoother transition
     autoplaySpeed: 100,
     cssEase: 'linear',
     pauseOnHover: true,
+    dots: false,
+    arrows: false,
   };
 
   // Array of logo images

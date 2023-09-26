@@ -1,0 +1,33 @@
+/* Offers.css */
+.offers-container {
+    text-align: center;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .image-item {
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  /* Zoom effect on hover */
+  .image-item:hover {
+    transform: scale(1.1); /* Adjust the scale factor for zoom effect */
+  }
+  
