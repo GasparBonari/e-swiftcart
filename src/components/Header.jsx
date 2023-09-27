@@ -9,7 +9,7 @@ function Header()
       <img src={headerImage} alt="Header Image" className="header-image" />
       <div className="header-content">
         <h1>SwiftCart</h1>
-        <p>The web to find any product you want</p>
+        <p className="header-p">The web to find any product you want</p>
         <div className="button-container">
           <button>Find Out</button>
           <button>About Us</button>

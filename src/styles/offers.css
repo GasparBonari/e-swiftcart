@@ -1,33 +1,49 @@
-/* Offers.css */
-.offers-container {
-    text-align: center;
-  }
-  
-  .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .image-item {
-    margin: 10px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .image {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  p {
-    margin: 5px 0;
-  }
-  
-  /* Zoom effect on hover */
-  .image-item:hover {
-    transform: scale(1.1); /* Adjust the scale factor for zoom effect */
-  }
-  
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 60px;
+}
+
+.image-item {
+  position: relative;
+  flex: 1;
+  margin: 10px;
+  overflow: hidden;
+  width: 540px;
+}
+
+.image {
+  max-width: 100%;
+  transition: all 0.3s;
+  display: block;
+  width: 80%;
+  height: auto;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7); /* Adjust the background color and opacity as needed */
+  color: white; /* Text color */
+  padding: 10px; /* Adjust the padding as needed */
+  font-size: 18px; /* Adjust the font size as needed */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image-overlay:hover .overlay-text {
+  opacity: 1;
+}

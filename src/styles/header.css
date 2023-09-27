@@ -42,7 +42,7 @@ h1 {
 }
 
 /* Style the p element */
-p {
+.header-p {
     font-size: 18px;
     color: #000000;
     margin-bottom: 20px;

@@ -24,7 +24,7 @@ function Home() {
     <div>
       <Header />
       <Brands />
-      {/* <Offers /> */}
+      <Offers />
     </div>
   );
 }
