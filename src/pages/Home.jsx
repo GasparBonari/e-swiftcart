@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
 import { fetchProducts } from '../api';
+import Header from '../components/Header';
 import Brands from '../components/Brands';
 import Offers from '../components/Offers';
+import Products from '../components/Products';
 
-function Home() {
+function Home() 
+{
   const [products, setProducts] = useState([]);
 
-    useEffect(() => 
-    {
-        async function fetchData() {
-        try {
-            const productsData = await fetchProducts();
-            setProducts(productsData);
-        } catch (error) {
-            console.log("Something went wrong calling API", error)
-        }
-        }
-        fetchData();
-    }, []);
+  useEffect(() => {
+    async function fetchData() {
+      try
+      {
+        const productsData = await fetchProducts(0, 0);
+        setProducts(productsData);
+      } 
+      catch (error) 
+      {
+        console.log('Something went wrong calling API', error);
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
     <div>
       <Header />
       <Brands />
       <Offers />
+      <Products products={products.products}/>
     </div>
   );
 }
