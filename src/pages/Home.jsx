@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Brands from '../components/Brands';
 import Offers from '../components/Offers';
 import Products from '../components/Products';
+import NewsLetter from '../components/Offer';
 
 function Home() 
 {
@@ -30,6 +31,7 @@ function Home()
       <Brands />
       <Offers />
       <Products products={products.products}/>
+      <NewsLetter/>
     </div>
   );
 }
