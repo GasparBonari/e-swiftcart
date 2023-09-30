@@ -4,7 +4,7 @@ import '../styles/limitedOffer.css';
 // Define your component
 function LimitedOffer() {
   return (
-    <div className="ImageBackgroundWrap Background-fixed">
+    <div className="ImageBackgroundWrap background-fixed">
       <div className="ImageInnerWrap">
         <div className="TextBackground">
           <div>

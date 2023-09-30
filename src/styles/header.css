@@ -1,7 +1,16 @@
 /* Header container */
+.background-fixed {
+    background-attachment: fixed;
+    background-position: center;
+}
+
 .header-container {
     position: relative;
-    height: 100vh; /* Adjust the height as needed */
+    height: 100vh;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/src/images/header.jpg");
 }
 
 /* Header image */
@@ -13,28 +22,28 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Place the image behind the content */
+    z-index: -1;
 }
 
 /* Header content */
 .header-content {
     z-index: 2;
     position: absolute;
-    left: 10%; /* Adjust the left offset as needed */
+    left: 10%;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align content to the left */
-    padding: 20px; /* Add some padding for spacing */
-    max-width: 50%; /* Limit the content width for larger screens */
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 50%;
     box-sizing: border-box;
 }
 
 /* Style the h1 element */
 h1 {
     font-size: 36px;
-    color: #000000; /* Text color matches the header background */
+    color: #000000;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 10px;
