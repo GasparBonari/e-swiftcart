@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Brands from '../components/Brands';
 import Offers from '../components/Offers';
 import Products from '../components/Products';
-import NewsLetter from '../components/Offer';
+import LimitedOffer from '../components/LimitedOffer';
 
 function Home() 
 {
@@ -30,8 +30,8 @@ function Home()
       <Header />
       <Brands />
       <Offers />
-      <Products products={products.products}/>
-      <NewsLetter/>
+      <Products products={products.products} />
+      <LimitedOffer />
     </div>
   );
 }

@@ -1,0 +1,51 @@
+.Background-fixed {
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.ImageBackgroundWrap {
+    position: relative;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/src/images/offer.jpg");
+}
+
+.ImageInnerWrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.TextBackground {
+   background-color: rgba(0, 45, 37, 0.429);
+    padding: 5%;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.TextBackground h2,
+.TextBackground p,
+.TextBackground h3 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.TextBackground button {
+  background-color: white;
+  color: rgba(0, 45, 37, 0.8);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.TextBackground button:hover {
+  background-color: rgba(0, 45, 37, 0.8);
+  color: white;
+}

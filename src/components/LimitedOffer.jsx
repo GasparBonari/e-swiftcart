@@ -1,17 +1,21 @@
 import React from 'react';
-import '../styles/offer.css';
+import '../styles/limitedOffer.css';
 
 // Define your component
-function NewsLetter() {
+function LimitedOffer() {
   return (
     <div className="ImageBackgroundWrap Background-fixed">
       <div className="ImageInnerWrap">
         <div className="TextBackground">
           <div>
-            <h2>CONTENT HEADING HERE</h2>
+            <h2>Limited Time Offer</h2>
           </div>
           <div>
-            <p>Lorem ipsum dolor sit amet, nec ea nihil nostrum</p>
+            <p>Special Edition</p>
+          </div>
+          <div>
+            <h3>Buy These products At 20% Discount, Use Code OFF20</h3>
+            <button>Show Now</button>
           </div>
         </div>
       </div>
@@ -19,4 +23,4 @@ function NewsLetter() {
   );
 }
 
-export default NewsLetter;
+export default LimitedOffer;
