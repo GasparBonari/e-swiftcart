@@ -32,7 +32,6 @@ h2{
     padding: 10px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
 }
 
 .product-slider:hover h3 {
@@ -72,3 +71,33 @@ h2{
     color: #007bff;
     margin-top: 20px;
 }
+
+.circle-button {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000000; /* Button background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+  }
+  
+  .circle-button:hover {
+    background-color: #0056b3; /* Adjust the color on hover */
+  }
+  
+  .cart-icon {
+    color: #fff; /* Icon color */
+    font-size: 24px; /* Adjust the icon size */
+    transition: transform 0.3s ease; /* Add a transition effect for the icon */
+  }
+  
+  .circle-button:hover .cart-icon {
+    transform: scale(1.2); /* Zoom effect on hover */
+  }

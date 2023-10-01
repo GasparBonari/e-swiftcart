@@ -2,6 +2,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import '../styles/products.css';
+import { FaCartPlus } from 'react-icons/fa';
 
 function Products({ products }) 
 {
@@ -48,18 +49,22 @@ function Products({ products })
         <div className="product-slider-container">
             {last10Products.map((product) => (
             <div key={product.id} className="product-slider">
-        
-                <Slider {...sliderSettings}>
-                    {product.images.map((image, index) => (
-                    <div key={index} className="product-slider-item">
-                        <img src={image} alt={`Product ${index + 1}`} className="product-image" />
-                    </div>
-                    ))}
-                </Slider>
-                <div className="product-details">
-                    <p className="product-price">${product.price}</p>
-                    <h3 className="product-title">{product.title}</h3>
+              <div className="circle-button">
+                <FaCartPlus className="cart-icon" />
+              </div>
+
+              <Slider {...sliderSettings}>
+                {product.images.map((image, index) => (
+                <div key={index} className="product-slider-item">
+                  <img src={image} alt={`Product ${index + 1}`} className="product-image" />
                 </div>
+                ))}
+              </Slider>
+
+              <div className="product-details">
+                <p className="product-price">${product.price}</p>
+                <h3 className="product-title">{product.title}</h3>
+              </div>
             </div>
             ))}
         </div>
