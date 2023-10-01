@@ -5,6 +5,7 @@ import Brands from '../components/Brands';
 import Offers from '../components/Offers';
 import Products from '../components/Products';
 import LimitedOffer from '../components/LimitedOffer';
+import Features from '../components/Features';
 
 function Home() 
 {
@@ -32,6 +33,7 @@ function Home()
       <Offers />
       <Products products={products.products} />
       <LimitedOffer />
+      <Features />
     </div>
   );
 }
