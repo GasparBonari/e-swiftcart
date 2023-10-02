@@ -1,0 +1,69 @@
+.footer {
+    background-color: #ffb082;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e7e43c;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscribe h3 {
+    margin-bottom: 10px;
+}
+
+.subscribe-form {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.subscribe-form input {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.subscribe-form button {
+    padding: 8px;
+    background-color: #fff;
+    color: #3498db;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #2980b9;
+    color: #fff;
+}
