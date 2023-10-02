@@ -3,7 +3,7 @@ import { fetchProducts } from '../api';
 import Header from '../components/Header';
 import Brands from '../components/Brands';
 import Offers from '../components/Offers';
-import Products from '../components/Products';
+import LatestProducts from '../components/LatestProducts';
 import LimitedOffer from '../components/LimitedOffer';
 import Features from '../components/Features';
 
@@ -31,7 +31,7 @@ function Home()
       <Header />
       <Brands />
       <Offers />
-      <Products products={products.products} />
+      <LatestProducts products={products.products} />
       <LimitedOffer />
       <Features />
     </div>
