@@ -1,0 +1,25 @@
+.flex-container {
+    display: flex;
+    margin-top: 120px;
+}
+
+.navigation-container {
+  width: 200px;
+  border-right: 1px solid #ccc;
+}
+
+.navigation p {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0;
+}
+
+.container-products{
+    flex-grow: 1;
+    padding: 15px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

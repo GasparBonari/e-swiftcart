@@ -16,7 +16,7 @@ function Home()
       try
       {
         const productsData = await fetchProducts(0, 0);
-        setProducts(productsData);
+        setProducts(productsData.products);
       } 
       catch (error) 
       {
@@ -31,7 +31,7 @@ function Home()
       <Header />
       <Brands />
       <Offers />
-      <LatestProducts products={products.products} />
+      <LatestProducts products={products} />
       <LimitedOffer />
       <Features />
     </div>
