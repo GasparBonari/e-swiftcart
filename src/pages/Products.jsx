@@ -1,4 +1,3 @@
-// Products.jsx
 import React, { useEffect, useState } from 'react';
 import ProductSlider from '../models/ProductSlider';
 import { fetchProducts } from '../api';
@@ -64,22 +63,25 @@ function Products() {
       <div className="navigation-container">
         <NavegationCategory onSelectCategory={setSelectedCategory} />
       </div>
-      <div className="container-products">
+      <div className='try'>
         <SortProducts sortOption={sortOption} sortOrder={sortOrder} onSortChange={handleSortChange} />
 
-        {sortedProducts().map((product) => (
-          <div key={product.id} className="product-slider">
-            <div className="circle-button">
-              <FaCartPlus className="cart-icon" />
-            </div>
+        <div className="container-products">
 
-            <ProductSlider images={product.images} />
-            <div className="product-details">
-              <p className="product-price">${product.price}</p>
-              <h3 className="product-title">{product.title}</h3>
+          {sortedProducts().map((product) => (
+            <div key={product.id} className="product-slider">
+              <div className="circle-button">
+                <FaCartPlus className="cart-icon" />
+              </div>
+
+              <ProductSlider images={product.images} />
+              <div className="product-details">
+                <p className="product-price">${product.price}</p>
+                <h3 className="product-title">{product.title}</h3>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
