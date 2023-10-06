@@ -87,18 +87,18 @@ h2{
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
-  }
+}
   
-  .circle-button:hover {
+.circle-button:hover {
     background-color: #0056b3; /* Adjust the color on hover */
-  }
+}
   
-  .cart-icon {
+.cart-icon {
     color: #fff; /* Icon color */
     font-size: 24px; /* Adjust the icon size */
     transition: transform 0.3s ease; /* Add a transition effect for the icon */
-  }
+}
   
-  .circle-button:hover .cart-icon {
+.circle-button:hover .cart-icon {
     transform: scale(1.2); /* Zoom effect on hover */
-  }
+}

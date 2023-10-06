@@ -26,15 +26,13 @@ function About() {
             <div className="animation-text"><h4>Who We Are...</h4></div>
         </div>
 
-        <div className="flex justify-center items-center h-screen">
-
-            <div className="flex-shrink-0 p-6">
-                <h1 className="text-4xl font-bold">Your Text Here</h1>
-                <p className="mt-4 text-gray-600">Additional text can go here...</p>
+        <div className="container">
+            <div className="text-container">
+                <h1>Team</h1>
+                <p>Your Text Goes Here</p>
             </div>
-
-            <div className="flex-shrink-0 p-6">
-                <img src={Team} className="max-w-full h-auto"></img>
+            <div className="image-container">
+                <img src={Team} alt="Team image" />
             </div>
         </div>
 
