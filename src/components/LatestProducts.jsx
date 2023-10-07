@@ -14,19 +14,22 @@ function LatestProducts({ products }) {
       <div className="product-slider-container">
         {last12Products.map((product) => (
           <div key={product.id} className="product-slider">
-            <div className="circle-button">
-              <FaCartPlus className="cart-icon" />
-            </div>
-
             <ProductSlider images={product.images} />
 
-            <div className="product-details">
-              <p className="product-price">${product.price}</p>
+            <div className="product-overlay">
               <h3 className="product-title">{product.title}</h3>
+
+              <div className="details">
+                <div className="circle-button">
+                  <FaCartPlus className="cart-icon" />
+                </div>
+                <p className="product-price">${product.price}</p>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
     </>
   );
 }
