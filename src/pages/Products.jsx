@@ -63,23 +63,24 @@ function Products() {
       <div className="navigation-container">
         <NavegationCategory onSelectCategory={setSelectedCategory} />
       </div>
-      <div className='try'>
+      <div className='list-products'>
         <SortProducts sortOption={sortOption} sortOrder={sortOrder} onSortChange={handleSortChange} />
 
         <div className="container-products">
-
           {sortedProducts().map((product) => (
-            <div key={product.id} className="product-slider">
-              <div className="circle-button">
-                <FaCartPlus className="cart-icon" />
-              </div>
-
+          <div className="card" key={product.id}>
+            <div className="imgBx">
               <ProductSlider images={product.images} />
-              <div className="product-details">
-                <p className="product-price">${product.price}</p>
-                <h3 className="product-title">{product.title}</h3>
-              </div>
             </div>
+
+            <div className="contentBx">
+              <h2>{product.title}</h2>
+
+              <div className="size">${product.price}</div>
+
+              <FaCartPlus className="cart-icon" />
+            </div>
+          </div>
           ))}
         </div>
       </div>

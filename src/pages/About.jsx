@@ -26,7 +26,7 @@ function About() {
             <div className="animation-text"><h4>Who We Are...</h4></div>
         </div>
 
-        <div className="container">
+        <div className="container-about">
             <div className="text-container">
                 <h1>Team</h1>
                 <p>Your Text Goes Here</p>

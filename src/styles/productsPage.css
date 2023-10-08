@@ -27,7 +27,7 @@
   justify-content: space-between;
 }
 
-.try{
+.list-products{
   display: flex;
   flex-direction: column;
   width: 90%;

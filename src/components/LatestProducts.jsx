@@ -11,25 +11,23 @@ function LatestProducts({ products }) {
   return (
     <>
       <h2>Latest Products</h2>
-      <div className="product-slider-container">
-        {last12Products.map((product) => (
-          <div key={product.id} className="product-slider">
-            <ProductSlider images={product.images} />
+      <div className="container">
+        {last12Products.map(product => 
+          <div className="card" key={product.id}>
+            <div className="imgBx">
+              <ProductSlider images={product.images} />
+            </div>
 
-            <div className="product-overlay">
-              <h3 className="product-title">{product.title}</h3>
+            <div className="contentBx">
+              <h2>{product.title}</h2>
 
-              <div className="details">
-                <div className="circle-button">
-                  <FaCartPlus className="cart-icon" />
-                </div>
-                <p className="product-price">${product.price}</p>
-              </div>
+              <div className="size">${product.price}</div>
+
+              <FaCartPlus className="cart-icon" />
             </div>
           </div>
-        ))}
+        )}
       </div>
-
     </>
   );
 }
