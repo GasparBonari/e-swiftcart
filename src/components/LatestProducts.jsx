@@ -1,6 +1,5 @@
 import React from 'react';
-import ProductSlider from '../models/ProductSlider';
-import { FaCartPlus } from 'react-icons/fa';
+import ProductCard from '../models/ProductCard';
 
 
 function LatestProducts({ products }) {
@@ -13,19 +12,7 @@ function LatestProducts({ products }) {
       <h2>Latest Products</h2>
       <div className="container">
         {last12Products.map(product => 
-          <div className="card" key={product.id}>
-            <div className="imgBx">
-              <ProductSlider images={product.images} />
-            </div>
-
-            <div className="contentBx">
-              <h2>{product.title}</h2>
-
-              <div className="size">${product.price}</div>
-
-              <FaCartPlus className="cart-icon" />
-            </div>
-          </div>
+          <ProductCard key={product.id} product={product} />
         )}
       </div>
     </>

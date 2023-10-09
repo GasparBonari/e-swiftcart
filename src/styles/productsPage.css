@@ -19,14 +19,6 @@
   background-color: #f8ff97;
 }
 
-.container-products{
-  padding: 15px;
-  gap: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .list-products{
   display: flex;
   flex-direction: column;

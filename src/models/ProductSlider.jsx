@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from 'react-slick';
-import '../styles/latestProducts.css';
 
 function ProductSlider({ images }) {
   const sliderSettings = {

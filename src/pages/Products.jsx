@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import ProductSlider from '../models/ProductSlider';
+import ProductCard from '../models/ProductCard';
 import { fetchProducts } from '../api';
 import NavegationCategory from '../components/NavegationCategory';
 import SortProducts from '../components/SortProducts';
 import '../styles/productsPage.css';
-import { FaCartPlus } from 'react-icons/fa';
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -68,19 +67,7 @@ function Products() {
 
         <div className="container-products">
           {sortedProducts().map((product) => (
-          <div className="card" key={product.id}>
-            <div className="imgBx">
-              <ProductSlider images={product.images} />
-            </div>
-
-            <div className="contentBx">
-              <h2>{product.title}</h2>
-
-              <div className="size">${product.price}</div>
-
-              <FaCartPlus className="cart-icon" />
-            </div>
-          </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
