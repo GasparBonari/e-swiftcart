@@ -65,7 +65,7 @@ function Products() {
       <div className='list-products'>
         <SortProducts sortOption={sortOption} sortOrder={sortOrder} onSortChange={handleSortChange} />
 
-        <div className="container-products">
+        <div className="container">
           {sortedProducts().map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
