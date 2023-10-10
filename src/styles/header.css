@@ -90,6 +90,8 @@ h1 {
 }
 
 
+/* Cloud Animation */
+
 #background-wrap {
     bottom: 0;
 	left: 0;
@@ -101,7 +103,7 @@ h1 {
     overflow: hidden;
 }
 
-/* KEYFRAMES */
+/* Keyframes */
 
 @-webkit-keyframes animateCloud {
     0% {
@@ -123,14 +125,14 @@ h1 {
 
 @keyframes animateCloud {
     0% {
-        margin-left: -1000px;
+        margin-left: -700px;
     }
     100% {
         margin-left: 100%;
     }
 }
 
-/* ANIMATIONS */
+/* Aniomation */
 
 .x1 {
 	-webkit-animation: animateCloud 35s linear infinite;
@@ -182,7 +184,7 @@ h1 {
 	transform: scale(0.55);
 }
 
-/* OBJECTS */
+/* Cloud */
 
 .cloud {
 	background: #fff;

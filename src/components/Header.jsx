@@ -6,27 +6,28 @@ function Header()
   return (
     <header className="header-container background-fixed">
 
-<div id="background-wrap">
-    <div class="x1">
-        <div class="cloud"></div>
-    </div>
+      <div id="background-wrap">
+          <div className="x1">
+            <div className="cloud"></div>
+          </div>
 
-    <div class="x2">
-        <div class="cloud"></div>
-    </div>
+          <div className="x2">
+            <div className="cloud"></div>
+          </div>
 
-    <div class="x3">
-        <div class="cloud"></div>
-    </div>
+          <div className="x3">
+            <div className="cloud"></div>
+          </div>
 
-    <div class="x4">
-        <div class="cloud"></div>
-    </div>
+          <div className="x4">
+            <div className="cloud"></div>
+          </div>
 
-    <div class="x5">
-        <div class="cloud"></div>
-    </div>
-</div>
+          <div className="x5">
+            <div className="cloud"></div>
+          </div>
+      </div>
+
       <div className="header-content">
         <h1>SwiftCart</h1>
         <p className="header-p">The web to find any product you want</p>
