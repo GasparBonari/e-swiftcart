@@ -6,6 +6,7 @@ import Offers from '../components/Offers';
 import LatestProducts from '../components/LatestProducts';
 import LimitedOffer from '../components/LimitedOffer';
 import Features from '../components/Features';
+import TestimonialSlider from '../components/Testimonials';
 
 function Home() 
 {
@@ -33,6 +34,7 @@ function Home()
       <Offers />
       <LatestProducts products={products} />
       <LimitedOffer />
+      <TestimonialSlider />
       <Features />
     </div>
   );
