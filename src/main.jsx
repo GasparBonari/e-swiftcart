@@ -7,6 +7,7 @@ import Navbar from './components/NavBar.jsx';
 import Footer from './components/Footer';
 import Products from './pages/Products';
 import About from './pages/About';
+import ContactUs from './pages/ContactUs';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Navbar />
 
       <Routes>
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home />} />
