@@ -175,8 +175,7 @@ li a{
 
 /* Expand the search bar on hover */
 .navbar-search:hover {
-    width: 300px; /* Adjust the width to expand on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.171); /* Adjust shadow on hover */
 }
 
 /* Expand the input field on hover */
@@ -200,3 +199,28 @@ li a{
     display: block;
     }
 }
+
+
+
+
+
+/* Add these styles to your CSS file or style tag */
+
+.product-list {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  
+  .product-list h2 {
+    color: #333; /* Adjust text color as needed */
+  }
+  
+  .product-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .product-list li {
+    margin-bottom: 5px; /* Adjust the margin as needed */
+    font-size: 14px; /* Adjust the font size as needed */
+  }
+  

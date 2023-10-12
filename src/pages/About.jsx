@@ -23,7 +23,7 @@ function About() {
   return (
     <>
       <div className="about-image">
-          <div className="animation-text"><h4>Who We Are...</h4></div>
+        <div className="animation-text"><h4>Who We Are...</h4></div>
       </div>
 
       <div className="container-about">
@@ -40,7 +40,7 @@ function About() {
               efficiency, style, and convenience.</p>
           </div>
           <div className="image-container">
-              <img src={Team} alt="Team image" />
+            <img src={Team} alt="Team image" />
           </div>
       </div>
 

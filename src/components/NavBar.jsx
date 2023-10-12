@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { fetchProducts } from '../api';
 import MobileMenu from './MobileMenu';
-import '../styles/navBar.css'
+import '../styles/navBar.css';
 import closeImage from '../images/close.png';
 import HamburgerIcon from '../images/hamburger-icon.png';
 import Logo from '../images/logo.png';
@@ -8,16 +9,36 @@ import Logo from '../images/logo.png';
 function Navbar() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   // Function to toggle menu visibility
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
+  // Fetch products from API when component mounts
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const productsData = await fetchProducts(0, 0);
+        setProducts(productsData.products);
+      } catch (error) {
+        console.log('Something went wrong calling API', error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  // Filter products based on the search term
+  const filteredProducts = products.filter(product =>
+    product.title && product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img href="/" src={Logo}></img>
+        <img href="/" src={Logo} alt="Logo" />
       </div>
 
       {/* Conditional rendering of the hamburger or close icon */}
@@ -44,9 +65,25 @@ function Navbar() {
       </ul>
 
       <div className={`navbar-search ${searchVisible ? 'show-search' : ''}`}>
-        <input type="text" placeholder="Search" />
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <button type="submit">Go</button>
       </div>
+
+      {/* Display list of products */}
+      {searchTerm && (
+        <div className="product-list">
+          <ul>
+            {filteredProducts.map(product => (
+              <li key={product.id}>{product.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }
