@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     padding: 50px;
-    gap: 40px;
+    gap: 100px;
 }
 
 form {
@@ -101,4 +101,10 @@ form textarea {
     box-shadow: 0 0.5em 0.5em -0.4em #ff923cba;
     background-size: 100% 100%;
     transform: translateY(-0.15em);
+}
+
+.map{
+    display: flex;
+    justify-content: center;
+    padding: 60px;
 }
