@@ -64,26 +64,32 @@ function Navbar() {
         <li><a href="/contact">Contact</a></li>
       </ul>
 
-      <div className={`navbar-search ${searchVisible ? 'show-search' : ''}`}>
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button type="submit">Go</button>
-      </div>
-
-      {/* Display list of products */}
-      {searchTerm && (
-        <div className="product-list">
-          <ul>
-            {filteredProducts.map(product => (
-              <li key={product.id}>{product.title}</li>
-            ))}
-          </ul>
+      <div className={`navbar-search-container ${searchVisible ? 'show-search' : ''}`}>
+        <div className="navbar-search">
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
-      )}
+
+        {/* Display list of products */}
+        {searchTerm && (
+          <div className="product-list">
+            <ul>
+              {filteredProducts.map(product => (
+              <li key={product.id}>
+                {/* Link to the product page */}
+                <a href={`/product/${product.id}`} onClick={() => handleProductClick(product)}>
+                  {product.title}
+                </a>
+              </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </nav>
   );
 }
