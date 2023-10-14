@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchProducts } from '../api'; // Update this import with your actual API function
+import { fetchProducts } from '../api';
+import Slider from 'react-slick';
+import '../styles/productDetails.css';
 
-const ProductDetails = ({ onClose }) => {
+const ProductDetails = () => {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -14,6 +17,8 @@ const ProductDetails = ({ onClose }) => {
 
         if (product) {
           setProductDetails(product);
+          // Set the initial selected image
+          setSelectedImage(product.images[0]);
         } else {
           console.error('Product not found.');
         }
@@ -25,18 +30,43 @@ const ProductDetails = ({ onClose }) => {
     fetchData();
   }, [id]);
 
+  const handleImageClick = (index) => {
+    setSelectedImage(productDetails.images[index]);
+  };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    afterChange: index => {
+      // Update the selected image when the slider changes
+      setSelectedImage(productDetails?.images[index]);
+    },
+  };
+
   if (!productDetails) {
-    // You can add a loading indicator here
     return <div>Loading...</div>;
   }
 
-  console.log(productDetails.title);
-
   return (
-    <div className="product-detail">
-      <h2>{productDetails.title}</h2>
-      {/* Display other product details */}
-      <button onClick={onClose}>Close</button>
+    <div className="product-container">
+      {/* Display the selected image above the slider in a bigger size */}
+      {selectedImage && (
+        <div className="selected-image">
+          <img src={selectedImage} alt="Selected Product" />
+        </div>
+      )}
+
+      {/* Slider for product images */}
+      <Slider {...settings} className="image-slider">
+        {productDetails.images.map((image, index) => (
+          <div key={index} onClick={() => handleImageClick(index)}>
+            <img src={image} alt={`Product ${index + 1}`} />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

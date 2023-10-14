@@ -1,0 +1,41 @@
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin-top: 100px;
+}
+  
+.selected-image {
+    margin-top: 20px;
+    width: 300px;
+}
+
+.image-slider {
+    max-width: 350px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+}
+
+.slick-prev:before, 
+.slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: rgb(245 126 94);
+}
+
+.slick-prev {
+  left: -30px;
+}
+
+.slick-next {
+  right: -30px;
+}
