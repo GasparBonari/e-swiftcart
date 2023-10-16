@@ -1,41 +1,121 @@
-.product-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    margin-top: 100px;
+.product-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  margin-top: 150px;
+  padding: 0 30px;
+  gap: 150px;
 }
-  
+
+/* product image */
+
+.product-images {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .selected-image {
-    margin-top: 20px;
-    width: 300px;
+  margin-right: 20px;
+  height: 400px;
 }
 
-.image-slider {
-    max-width: 350px;
-    margin-top: 20px;
-    cursor: pointer;
+.selected-image img {
+  width: 360px;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.slick-prev,
-.slick-next {
-  font-size: 0;
-  line-height: 0;
+.selected-image img:hover {
+  transform: scale(1.5);
 }
 
-.slick-prev:before, 
-.slick-next:before {
-    font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
-    opacity: .75;
-    color: rgb(245 126 94);
+.image-slider-vertical {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-.slick-prev {
-  left: -30px;
+.image-slider-vertical img {
+  max-width: 100px;
+  margin-bottom: 10px;
 }
 
-.slick-next {
-  right: -30px;
+.image-slider-vertical div {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-slider-vertical div:hover {
+  transform: scale(1.1);
+}
+
+/* product info */
+
+.product-information{
+  width: 500px;
+}
+
+.info::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #0000003c;
+  margin-top: 30px;
+}
+
+.quantity-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.quantity-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.quantity-counter {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.quantity-controls button:hover {
+  background-color: #45a049;
+}
+
+.quantity-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* tab selection */
+
+.tab-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  margin-top: 30px;
+  gap: 30px;
 }
