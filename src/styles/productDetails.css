@@ -119,3 +119,26 @@
   margin-top: 30px;
   gap: 30px;
 }
+
+.product-tabs {
+  display: flex;
+}
+
+.product-tabs button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.product-tabs button:hover {
+  background-color: yellow; /* Set the background color on hover */
+  color: rgb(0, 0, 0); /* Set the text color on hover */
+}
+
+.product-tabs button.active {
+  border-bottom: 2px solid #dba334; /* Active tab styles */
+  color: black; /* Active tab text color */
+}
