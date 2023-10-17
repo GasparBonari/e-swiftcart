@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { fetchProducts } from '../api';
 import StarRating from '../components/StarRating';
 import ProductTabs from '../components/ProductTabs';
+import User1 from '../images/user1.jpg';
+import User2 from '../images/user2.jpg';
 import '../styles/productDetails.css';
 
 const ProductDetails = () => {
@@ -11,6 +13,21 @@ const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('additionalInfo');
+
+  const reviews = [
+    {
+      id: 1,
+      name: 'John Doe',
+      profilePicture: User2,
+      comment: 'Great product! Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    },
+    {
+      id: 2,
+      name: 'Jane Smith',
+      profilePicture: User1,
+      comment: 'Awesome quality and fast shipping. Highly recommended!',
+    },
+  ];
 
   useEffect(() => {
     async function fetchData() {
@@ -64,7 +81,6 @@ const ProductDetails = () => {
             <li>Weight: 00 gr</li>
             <li>Dimensions: 00 x 00 x 00 cm</li>
             <li>Material: Lorem ipsum dolor sit amet, consetetur sadipscing</li>
-            {/* Add additional information as needed */}
           </ul>
         );
       case 'description':
@@ -72,8 +88,15 @@ const ProductDetails = () => {
       case 'reviews':
         return (
           <div>
-            <p>Review 1</p>
-            <p>Review 2</p>
+            {reviews.map((review) => (
+              <div key={review.id} className="review-container">
+                <img src={review.profilePicture} alt={`${review.name}'s profile`} className="profile-picture"></img>
+                <div className="review-details">
+                  <p className="customer-name">{review.name}</p>
+                  <p className="customer-comment">{review.comment}</p>
+                </div>
+              </div>
+            ))}
           </div>
         );
       default:
@@ -151,8 +174,38 @@ const ProductDetails = () => {
         <ProductTabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
         {/* Tab Content */}
-        <div>
+        <div className='tab-content'>
           {renderTabContent()}
+
+          {/* Review Form */}
+          {activeTab === 'reviews' && (
+            <form className="review-form">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
+
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+
+              <label htmlFor="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+              ></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
+          )}
         </div>
       </div>
     </>

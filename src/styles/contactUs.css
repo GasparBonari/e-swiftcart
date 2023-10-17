@@ -18,7 +18,7 @@
     gap: 100px;
 }
 
-form {
+.contact-form {
     min-width: 25rem;
     display: flex;
     flex-direction: column;
@@ -26,34 +26,34 @@ form {
     align-items: center;
 }
 
-form .title {
+.contact-form  .title {
     color: #212529;
     font-size: 2.5rem;
 }
 
-form .form-control {
+.contact-form  .form-control {
     background-color: #f2f6f8;
     border-radius: 2rem;
     border: none;
     box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
 }
 
-form .form-control.thick {
+.contact-form  .form-control.thick {
     height: 3.3rem;
     padding: 0.5rem 3.5rem;
 }
 
-form .form-control:focus {
+.contact-form  .form-control:focus {
     background-color: #f2f6f8;
     border: none;
     box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
 }
 
-form .message .form-control {
+.contact-form  .message .form-control {
     padding: 0.5rem 3rem;
 }
 
-form ::placeholder {
+.contact-form  ::placeholder {
     font-weight: 600;
     font-size: 1.1rem;
     color: #838788;
@@ -61,8 +61,8 @@ form ::placeholder {
     left: 0;
 }
 
-form input,
-form textarea {
+.contact-form  input,
+.contact-form  textarea {
     color: #212529;
     font-size: 1.1rem;
 }

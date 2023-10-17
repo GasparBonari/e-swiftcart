@@ -32,7 +32,7 @@ function ContactUs()
 
             <div className="container-contact">
 
-                <form>
+                <form className='contact-form'>
                     <h1 className="title text-center mb-4">Get in touch</h1>
                      
                     <div className="input-container">

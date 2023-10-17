@@ -134,11 +134,77 @@
 }
 
 .product-tabs button:hover {
-  background-color: yellow; /* Set the background color on hover */
-  color: rgb(0, 0, 0); /* Set the text color on hover */
+  background-color: yellow;
 }
 
 .product-tabs button.active {
-  border-bottom: 2px solid #dba334; /* Active tab styles */
-  color: black; /* Active tab text color */
+  border-bottom: 2px solid #dba334;
+}
+
+.tab-content{
+  display: flex;
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  gap: 50px;
+}
+
+/* reviews */
+
+.review-container {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 60px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.review-details {
+  flex: 1;
+}
+
+.customer-name {
+  font-weight: bold;
+}
+
+.customer-comment {
+  margin-top: 5px;
+}
+
+.review-form {
+  margin-top: 20px;
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.review-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.review-form button:hover {
+  background-color: #0056b3;
 }
