@@ -5,6 +5,8 @@ import '../styles/navBar.css';
 import closeImage from '../images/close.png';
 import HamburgerIcon from '../images/hamburger-icon.png';
 import Logo from '../images/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -64,31 +66,35 @@ function Navbar() {
         <li><a href="/contact">Contact</a></li>
       </ul>
 
-      <div className={`navbar-search-container ${searchVisible ? 'show-search' : ''}`}>
-        <div className="navbar-search">
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
+      <div className='right-side'>
+        <FontAwesomeIcon className='checkout-bag' icon={faShoppingBag}/>
 
-        {/* Display list of products */}
-        {searchTerm && (
-          <div className="product-list">
-            <ul>
-              {filteredProducts.map(product => (
-              <li key={product.id}>
-                {/* Link to the product page */}
-                <a href={`/product/${product.id}`} onClick={() => handleProductClick(product)}>
-                  {product.title}
-                </a>
-              </li>
-              ))}
-            </ul>
+        <div className={`navbar-search-container ${searchVisible ? 'show-search' : ''}`}>
+          <div className="navbar-search">
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
-        )}
+
+          {/* Display list of products */}
+          {searchTerm && (
+            <div className="product-list">
+              <ul>
+                {filteredProducts.map(product => (
+                <li key={product.id}>
+                  {/* Link to the product page */}
+                  <a href={`/product/${product.id}`} onClick={() => handleProductClick(product)}>
+                    {product.title}
+                  </a>
+                </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );

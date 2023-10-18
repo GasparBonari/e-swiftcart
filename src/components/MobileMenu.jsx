@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 function MobileMenu({ isOpen, onClose }) {
   return (
@@ -9,6 +11,8 @@ function MobileMenu({ isOpen, onClose }) {
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
+
+      <FontAwesomeIcon icon={faShoppingBag}/>
       
       <div className="mobile-search">
         <input type="text" placeholder="Search" />
