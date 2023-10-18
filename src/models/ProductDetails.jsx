@@ -6,6 +6,8 @@ import ProductTabs from '../components/ProductTabs';
 import User1 from '../images/user1.jpg';
 import User2 from '../images/user2.jpg';
 import '../styles/productDetails.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -49,6 +51,12 @@ const ProductDetails = () => {
 
     fetchData();
   }, [id]);
+
+  const [clicked, setClicked] = useState(false);
+
+  const handleCartClick = () => {
+    setClicked(true);
+  };
 
   const handleImageClick = (index) => {
     setSelectedImage(productDetails.images[index]);
@@ -140,29 +148,39 @@ const ProductDetails = () => {
           
           <p className='info'>{productDetails.description}</p>
 
-          <div className="quantity-counter">
-            <div className="quantity-controls">
-              <button onClick={() => setQuantity(quantity - 1)} disabled={quantity <= 1}>
-                -
-              </button>
+          <div className='buy'>
+            <div className="quantity-counter">
+              <div className="quantity-controls">
+                <button onClick={() => setQuantity(quantity - 1)} disabled={quantity <= 1}>
+                  -
+                </button>
+              </div>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                value={quantity}
+                onChange={handleQuantityChange}
+                min="1"
+                className="quantity-input"
+              />
+              <div className="quantity-controls">
+                <button onClick={() => setQuantity(quantity + 1)}>
+                  +
+                </button>
+              </div>
             </div>
-            <input
-              type="number"
-              id="quantity"
-              name="quantity"
-              value={quantity}
-              onChange={handleQuantityChange}
-              min="1"
-              className="quantity-input"
-            />
-            <div className="quantity-controls">
-              <button onClick={() => setQuantity(quantity + 1)}>
-                +
-              </button>
-            </div>
-          </div>
 
-          <button>Add to Cart</button>
+            <button
+              className={`cart-button ${clicked ? 'clicked' : ''}`}
+              onClick={handleCartClick}
+            >
+              <span className="add-to-cart">Add</span>
+              <span className="added">Added</span>
+              <FontAwesomeIcon icon={faShoppingCart} className='cart'/>
+              <FontAwesomeIcon icon={faShoppingBag} className='bag'/>
+            </button>
+          </div>
 
           <p>Category: {productDetails.category}</p>
           <p>Brand: {productDetails.brand}</p>

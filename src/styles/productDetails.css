@@ -92,7 +92,7 @@
 .quantity-controls button {
   width: 30px;
   height: 30px;
-  background-color: #4caf50;
+  background-color: #ef9561;
   color: white;
   border: none;
   border-radius: 5px;
@@ -101,12 +101,17 @@
 }
 
 .quantity-controls button:hover {
-  background-color: #45a049;
+  background-color: #ef9561;
 }
 
 .quantity-controls button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.buy{
+  display: flex;
+  gap: 20px;
 }
 
 /* tab selection */
@@ -207,4 +212,113 @@
 
 .review-form button:hover {
   background-color: #0056b3;
+}
+
+
+/* add to cart button animation */
+
+.cart-button {
+	position: relative;
+	padding: 10px;
+	width: 130px;
+	height: 50px;
+	border: 0;
+	border-radius: 10px;
+	background-color: #ef9561;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	transition: .3s ease-in-out;
+	overflow: hidden;
+}
+.cart-button:hover {
+	background-color: #ef752e;
+}
+.cart-button:active {
+	transform: scale(.9);
+}
+
+.cart-button .cart {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: -20%;
+	font-size: 2em;
+	transform: translate(-50%,-50%);
+}
+.cart-button .bag {
+	position: absolute;
+	z-index: 3;
+	top: -20%;
+	left: 52%;
+	font-size: 1.2em;
+	transform: translate(-50%,-50%);
+}
+.cart-button span {
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	top: 50%;
+	font-size: 1.2em;
+	color: #fff;
+	transform: translate(-50%,-50%);
+}
+.cart-button span.add-to-cart {
+	opacity: 1;
+}
+.cart-button span.added {
+	opacity: 0;
+}
+
+.cart-button.clicked .cart {
+	animation: cart1 1.5s ease-in-out forwards;
+}
+.cart-button.clicked .bag {
+	animation: box1 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.add-to-cart {
+	animation: txt1 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.added {
+	animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart1 {
+	0% {
+		left: -10%;
+	}
+	40%, 60% {
+		left: 50%;
+	}
+	100% {
+		left: 120%;
+	}
+}
+@keyframes box1 {
+	0%, 40% {
+		top: -20%;
+	}
+	60% {
+		top: 30%;
+		left: 52%;
+	}
+	100% {
+		top: 40%;
+		left: 122%;
+	}
+}
+@keyframes txt1 {
+	0% {
+		opacity: 1;
+	}
+	20%, 100% {
+		opacity: 0;
+	}
+}
+@keyframes txt2 {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
