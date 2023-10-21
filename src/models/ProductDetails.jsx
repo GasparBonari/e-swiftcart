@@ -9,7 +9,7 @@ import '../styles/productDetails.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
-const ProductDetails = () => {
+const ProductDetails = ({ addToCart }) => {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -56,6 +56,7 @@ const ProductDetails = () => {
 
   const handleCartClick = () => {
     setClicked(true);
+    addToCart(productDetails);
   };
 
   const handleImageClick = (index) => {

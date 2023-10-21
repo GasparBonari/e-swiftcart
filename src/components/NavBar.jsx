@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchProducts } from '../api';
 import MobileMenu from './MobileMenu';
 import '../styles/navBar.css';
@@ -8,7 +9,7 @@ import Logo from '../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
-function Navbar() {
+function Navbar({ toggleShoppingCart, cartItemsCount }) {
   const [menuVisible, setMenuVisible] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
   const [products, setProducts] = useState([]);
@@ -40,7 +41,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img href="/" src={Logo} alt="Logo" />
+        <Link to="/">
+          <img src={Logo} alt="Logo" />
+        </Link>
       </div>
 
       {/* Conditional rendering of the hamburger or close icon */}
@@ -67,7 +70,15 @@ function Navbar() {
       </ul>
 
       <div className='right-side'>
-        <FontAwesomeIcon className='checkout-bag' icon={faShoppingBag}/>
+
+        {/* Show cart item count and handle click event */}
+        <div 
+          className='checkout-bag' 
+          onClick={toggleShoppingCart}
+        >
+          <FontAwesomeIcon icon={faShoppingBag} />
+          <span className='item-count'>{cartItemsCount}</span>
+        </div>
 
         <div className={`navbar-search-container ${searchVisible ? 'show-search' : ''}`}>
           <div className="navbar-search">
