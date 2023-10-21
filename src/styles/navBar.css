@@ -41,8 +41,9 @@ li a{
 
 .navbar-links li a {
     position: relative;
-    color: #333; /* Default link color */
-    transition: color 0.3s ease; /* Smooth color transition */
+    color: #333;
+    transition: color 0.3s ease;
+    font-size: 17px;
 }
 
 .navbar-links li a:hover {
