@@ -45,7 +45,7 @@ function Navbar({ toggleShoppingCart, cartItemsCount }) {
           <img src={Logo} alt="Logo" />
         </Link>
       </div>
-
+      
       {/* Conditional rendering of the hamburger or close icon */}
       {menuVisible ? (
         /* Close Icon for Small Screens */
@@ -70,7 +70,6 @@ function Navbar({ toggleShoppingCart, cartItemsCount }) {
       </ul>
 
       <div className='right-side'>
-
         {/* Show cart item count and handle click event */}
         <div 
           className='checkout-bag' 

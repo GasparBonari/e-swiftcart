@@ -4,6 +4,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../styles/shoppingCart.css';
 
 const ShoppingCart = ({ cartItems, toggleShoppingCart }) => {
+  
   return (
     <div className="shopping-cart">
       <div className="cart-header">
@@ -16,11 +17,14 @@ const ShoppingCart = ({ cartItems, toggleShoppingCart }) => {
         ) : (
           <ul>
             {cartItems.map((item, index) => (
-              <li key={index}>
+              <li key={index} className="cart-item-container">
                 <div className="cart-item">
                   <img src={item.images[0]} alt={item.title} className="cart-item-image" />
                   <span className="cart-item-title">{item.title}</span>
                   <span className="cart-item-price">${item.price}</span>
+                </div>
+                <div className="delete-button-container">
+                  <button className="delete-button">Delete</button>
                 </div>
               </li>
             ))}
