@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import ProductCard from '../models/ProductCard';
+import ProductCard from '../models/ProductCard/ProductCard';
 import { fetchProducts } from '../api';
-import NavegationCategory from '../components/NavegationCategory';
-import SortProducts from '../components/SortProducts';
+import NavegationCategory from '../components/NavegationCategory/NavegationCategory';
+import SortProducts from '../components/SortProducts/SortProducts';
 import '../styles/productsPage.css';
 
 function Products() {

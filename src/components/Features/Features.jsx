@@ -2,7 +2,7 @@ import React from 'react';
 import { GiWorld} from 'react-icons/gi';
 import { BiSolidOffer, BiSolidLock} from 'react-icons/bi';
 import { PiTShirtFill} from 'react-icons/pi';
-import "../styles/features.css";
+import "./features.css";
 
 function Features(){
   return (

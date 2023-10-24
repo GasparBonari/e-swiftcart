@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchProducts } from '../api';
-import StarRating from '../components/StarRating';
-import ProductTabs from '../components/ProductTabs';
-import User1 from '../images/user1.jpg';
-import User2 from '../images/user2.jpg';
-import '../styles/productDetails.css';
+import { fetchProducts } from '../../api';
+import StarRating from '../../components/StarRating/StarRating';
+import ProductTabs from '../../components/ProductTabs/ProductTabs';
+import User1 from '../../images/user1.jpg';
+import User2 from '../../images/user2.jpg';
+import '../../styles/productDetails.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
@@ -118,7 +118,6 @@ const ProductDetails = ({ addToCart }) => {
   }
 
   return (
-
     <>
       <div className='product-container'>
         <div className="product-images">

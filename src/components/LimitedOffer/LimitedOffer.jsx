@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/limitedOffer.css';
+import './limitedOffer.css';
 
 // Define your component
 function LimitedOffer() {

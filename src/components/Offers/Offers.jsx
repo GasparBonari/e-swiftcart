@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/offers.css';
-import offer1 from '../images/offer1.png';
-import offer2 from '../images/offer2.png';
-import offer3 from '../images/offer3.png';
+import './offers.css';
+import offer1 from '../../images/offer3.png';
+import offer2 from '../../images/offer2.png';
+import offer3 from '../../images/offer3.png';
 
 function Offers() {
   return (

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { fetchProducts } from '../api';
-import Header from '../components/Header';
-import Brands from '../components/Brands';
-import Offers from '../components/Offers';
-import LatestProducts from '../components/LatestProducts';
-import LimitedOffer from '../components/LimitedOffer';
-import Features from '../components/Features';
-import TestimonialSlider from '../components/Testimonials';
+import Header from '../components/Header/Header';
+import Brands from '../components/Brands/Brands';
+import Offers from '../components/Offers/Offers';
+import LatestProducts from '../components/LatestProducts/LatestProducts';
+import LimitedOffer from '../components/LimitedOffer/LimitedOffer';
+import Features from '../components/Features/Features';
+import TestimonialSlider from '../components/Testimonials/Testimonials';
 
 function Home() 
 {

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/index.css';
 import Home from './pages/Home.jsx';
-import Navbar from './components/NavBar.jsx';
-import Footer from './components/Footer';
+import Navbar from './components/NavBar/NavBar.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import ProductDetails from './models/ProductDetails/ProductDetails.jsx';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart.jsx';
 import Products from './pages/Products';
 import About from './pages/About';
 import ContactUs from './pages/ContactUs';
-import ProductDetails from './models/ProductDetails';
-import ShoppingCart from './components/ShoppingCart';
 
 const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);

@@ -2,17 +2,17 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../styles/brands.css';
-import logo1 from '../images/logos/logoipsum-1.svg';
-import logo2 from '../images/logos/logoipsum-2.svg';
-import logo3 from '../images/logos/logoipsum-3.svg';
-import logo4 from '../images/logos/logoipsum-4.svg';
-import logo5 from '../images/logos/logoipsum-5.svg';
-import logo6 from '../images/logos/logoipsum-6.svg';
-import logo7 from '../images/logos/logoipsum-7.svg';
-import logo8 from '../images/logos/logoipsum-8.svg';
-import logo9 from '../images/logos/logoipsum-9.svg';
-import logo10 from '../images/logos/logoipsum-10.svg';
+import './brands.css';
+import logo1 from '../../images/logos/logoipsum-1.svg';
+import logo2 from '../../images/logos/logoipsum-2.svg';
+import logo3 from '../../images/logos/logoipsum-3.svg';
+import logo4 from '../../images/logos/logoipsum-4.svg';
+import logo5 from '../../images/logos/logoipsum-5.svg';
+import logo6 from '../../images/logos/logoipsum-6.svg';
+import logo7 from '../../images/logos/logoipsum-7.svg';
+import logo8 from '../../images/logos/logoipsum-8.svg';
+import logo9 from '../../images/logos/logoipsum-9.svg';
+import logo10 from '../../images/logos/logoipsum-10.svg';
 
 function Brands() 
 {

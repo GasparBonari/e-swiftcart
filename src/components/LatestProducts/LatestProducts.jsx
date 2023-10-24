@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from '../models/ProductCard';
+import ProductCard from '../../models/ProductCard/ProductCard';
 
 
 function LatestProducts({ products }) {

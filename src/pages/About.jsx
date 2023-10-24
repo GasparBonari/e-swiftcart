@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../styles/aboutPage.css';
 import Team from '../images/people.png';
-import Features from '../components/Features';
+import Features from '../components/Features/Features';
 
 function About() {
 

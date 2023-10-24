@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchProducts } from '../api';
-import MobileMenu from './MobileMenu';
-import '../styles/navBar.css';
-import closeImage from '../images/close.png';
-import HamburgerIcon from '../images/hamburger-icon.png';
-import Logo from '../images/logo.png';
+import { fetchProducts } from '../../api';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import './navBar.css';
+import closeImage from '../../images/close.png';
+import HamburgerIcon from '../../images/hamburger-icon.png';
+import Logo from '../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 

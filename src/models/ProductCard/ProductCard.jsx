@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductSlider from '../models/ProductSlider';
+import ProductSlider from '../ProductSlider/ProductSlider';
 import { FaCartPlus } from 'react-icons/fa';
-import '../styles/productCard.css';
+import '../../styles/productCard.css';
 
 function ProductCard({ product }) {
   return (
