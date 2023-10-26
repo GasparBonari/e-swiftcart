@@ -42,7 +42,26 @@ const App = () => {
   };
 
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+    // Check if the product with the same details already exists in the cart
+    const existingProductIndex = cartItems.findIndex(
+      (item) => item.id === product.id
+    );
+
+    if (existingProductIndex !== -1) {
+      // If the product exists, update the quantity
+      const updatedCart = [...cartItems];
+      updatedCart[existingProductIndex].quantity += product.quantity;
+      setCartItems(updatedCart);
+    } else {
+      // If the product does not exist, add it to the cart
+      setCartItems([...cartItems, product]);
+    }
+  };
+
+  const deleteFromCart = (index) => {
+    const updatedCart = [...cartItems];
+    updatedCart.splice(index, 1);
+    setCartItems(updatedCart);
   };
 
   return (
@@ -75,8 +94,9 @@ const App = () => {
         {/* Conditionally render the ShoppingCart */}
         {shoppingCartVisible && (
           <ShoppingCart 
-            cartItems={cartItems} 
-            toggleShoppingCart={toggleShoppingCart} 
+            cartItems={cartItems}
+            toggleShoppingCart={toggleShoppingCart}
+            deleteFromCart={deleteFromCart}
           />
         )}
 

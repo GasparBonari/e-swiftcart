@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './shoppingCart.css';
 
-const ShoppingCart = ({ cartItems, toggleShoppingCart }) => {
-  
+const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
   return (
     <div className="shopping-cart">
       <div className="cart-header">
@@ -22,9 +21,10 @@ const ShoppingCart = ({ cartItems, toggleShoppingCart }) => {
                   <img src={item.images[0]} alt={item.title} className="cart-item-image" />
                   <span className="cart-item-title">{item.title}</span>
                   <span className="cart-item-price">${item.price}</span>
+                  {item.quantity > 1 && <span className="cart-item-quantity">Qty: {item.quantity}</span>}
                 </div>
                 <div className="delete-button-container">
-                  <button className="delete-button">Delete</button>
+                  <button className="delete-button" onClick={() => deleteFromCart(index)}>Delete</button>
                 </div>
               </li>
             ))}

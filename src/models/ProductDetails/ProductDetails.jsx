@@ -56,13 +56,11 @@ const ProductDetails = ({ addToCart }) => {
 
   const handleCartClick = () => {
     setClicked(true);
-    addToCart(productDetails);
+    addToCart({ ...productDetails, quantity });
   };
 
   const handleImageClick = (index) => {
     setSelectedImage(productDetails.images[index]);
-
-    console.log(productDetails)
   };
 
   const handleQuantityChange = (event) => {
@@ -173,8 +171,7 @@ const ProductDetails = ({ addToCart }) => {
 
             <button
               className={`cart-button ${clicked ? 'clicked' : ''}`}
-              onClick={handleCartClick}
-            >
+              onClick={handleCartClick}>
               <span className="add-to-cart">Add</span>
               <span className="added">Added</span>
               <FontAwesomeIcon icon={faShoppingCart} className='cart'/>
