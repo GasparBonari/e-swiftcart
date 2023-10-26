@@ -55,9 +55,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+  padding: 10px 0;
+}
+
+.cart-item-container {
+  position: relative;
+  overflow: hidden;
 }
 
 .cart-footer {
@@ -70,6 +74,7 @@
   align-items: center;
   margin-bottom: 10px;
   gap: 15px;
+  transition: margin-right 0.3s ease;
 }
 
 .cart-item-image {
@@ -91,32 +96,30 @@
   color: #555;
 }
 
-
-.cart-item-container {
-  position: relative;
-  overflow: hidden;
-}
-
 .delete-button-container {
   position: absolute;
   top: 0;
-  right: -100%; /* initially position it outside the container */
+  right: -100%;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  transition: right 0.3s ease; /* add animation transition */
+  transition: right 0.3s ease;
+}
+
+.cart-item-container:hover .cart-item {
+  margin-right: 60px;
 }
 
 .cart-item-container:hover .delete-button-container {
-  right: 0; /* slide the button in when hovering */
+  right: 0;
 }
 
 .delete-button {
   background-color: #ff0000;
   color: #ffffff;
   border: none;
-  padding: 5px 10px;
+  padding: 50px 10px;
   cursor: pointer;
 }
