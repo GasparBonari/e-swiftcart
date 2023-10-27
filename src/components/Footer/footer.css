@@ -53,17 +53,19 @@
 .subscribe-form input {
     padding: 8px;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .subscribe-form button {
     padding: 8px;
     background-color: #fff;
-    color: #3498db;
+    color: black;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
 
 .subscribe-form button:hover {
-    background-color: #2980b9;
+    background-color: #e7e43c;
     color: #fff;
 }

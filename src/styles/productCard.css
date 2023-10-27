@@ -96,7 +96,7 @@ h2{
     height: 100px;
     text-align: center;
     transition: 1s;
-    z-index: 999999;
+    z-index: 9999;
 }
 
 .card:hover .contentBx {

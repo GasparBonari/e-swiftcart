@@ -2,7 +2,7 @@ import React from 'react';
 import ProductCard from '../../models/ProductCard/ProductCard';
 
 
-function LatestProducts({ products }) {
+function LatestProducts({ products, addToCart }) {
   if (!products) return <p>Loading...</p>;
 
   const last12Products = products.slice(5, 17);
@@ -12,7 +12,7 @@ function LatestProducts({ products }) {
       <h2>Latest Products</h2>
       <div className="container">
         {last12Products.map(product => 
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} addToCart={addToCart} />
         )}
       </div>
     </>

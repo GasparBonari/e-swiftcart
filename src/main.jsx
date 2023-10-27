@@ -76,7 +76,7 @@ const App = () => {
             element={<Products addToCart={addToCart}/>}
           />
           <Route path="/about" element={<About />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home addToCart={addToCart} />} />
         </Routes>
 
         {selectedProduct && (

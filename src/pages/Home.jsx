@@ -8,7 +8,7 @@ import LimitedOffer from '../components/LimitedOffer/LimitedOffer';
 import Features from '../components/Features/Features';
 import TestimonialSlider from '../components/Testimonials/Testimonials';
 
-function Home() 
+function Home({ addToCart }) 
 {
   const [products, setProducts] = useState([]);
 
@@ -32,7 +32,7 @@ function Home()
       <Header />
       <Brands />
       <Offers />
-      <LatestProducts products={products} />
+      <LatestProducts products={products} addToCart={addToCart} />
       <LimitedOffer />
       <TestimonialSlider />
       <Features />
