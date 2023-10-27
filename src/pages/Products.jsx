@@ -5,7 +5,7 @@ import NavegationCategory from '../components/NavegationCategory/NavegationCateg
 import SortProducts from '../components/SortProducts/SortProducts';
 import '../styles/productsPage.css';
 
-function Products() {
+function Products({ addToCart }) {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('smartphones');
   const [sortOption, setSortOption] = useState('default');
@@ -67,7 +67,7 @@ function Products() {
 
         <div className="container">
           {sortedProducts().map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} addToCart={addToCart} />
           ))}
         </div>
       </div>

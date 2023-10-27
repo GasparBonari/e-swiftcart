@@ -29,7 +29,7 @@ h2{
     gap: 20px;
 }
 
-.container .card {
+.card {
     position: relative;
     width: 320px;
     height: 450px;
@@ -38,7 +38,7 @@ h2{
     overflow: hidden;
 }
 
-.container .card:before {
+.card:before {
     content: "";
     position: absolute;
     top: 0;
@@ -50,11 +50,11 @@ h2{
     transition: 0.5s ease-in-out;
 }
 
-.container .card:hover:before {
+.card:hover:before {
     clip-path: circle(300px at 80% -20%);
 }
 
-.container .card:after {
+.card:after {
     content: "SwiftCart";
     position: absolute;
     top: 0%;
@@ -62,10 +62,10 @@ h2{
     font-size: 4em;
     font-weight: 800;
     font-style: italic;
-    color: rgb(0 0 0 / 3%);
+    color: rgba(0, 0, 0, 0.056);
 }
 
-.container .card .imgBx {
+.imgBx {
     position: absolute;
     top: 50%;
     transform: translateY(-30%);
@@ -75,12 +75,12 @@ h2{
     transition: .5s;
 }
 
-.container .card:hover .imgBx {
+.card:hover .imgBx {
     top: 0%;
     transform: translateY(2%);
 }
 
-.container .card .imgBx img {
+.imgBx img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -89,21 +89,21 @@ h2{
     border-radius: 20px;
 }
 
-.container .card .contentBx {
+.contentBx {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 100px;
     text-align: center;
     transition: 1s;
-    z-index: 90;
+    z-index: 999999;
 }
 
-.container .card:hover .contentBx {
+.card:hover .contentBx {
     height: 210px;
 }
 
-.container .card .contentBx h2 {
+.contentBx h2 {
     position: relative;
     font-weight: 600;
     letter-spacing: 1px;
@@ -111,8 +111,8 @@ h2{
     font-size: 20px;
 }
 
-.container .card .contentBx .size,
-.container .card .contentBx .color {
+.price,
+.cart-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,93 +123,34 @@ h2{
     color: white;
 }
 
-.container .card:hover .contentBx .size {
+.card:hover .contentBx .price {
     opacity: 1;
     visibility: visible;
     transition-delay: .5s;
 }
 
-.container .card:hover .contentBx .color {
+.card:hover .contentBx .cart-icon {
     opacity: 1;
     visibility: visible;
     transition-delay: .6s;
 }
 
-.container .card .contentBx .size h3,
-.container .card .contentBx .color h3 {
-    color: white;
-    font-weight: 300;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-right: 10px;
-}
-
-.container .card .contentBx .size span {
-    width: 26px;
-    height: 26px;
-    text-align: center;
-    line-height: 26px;
-    font-size: 14px;
-    display: inline-block;
-    color: #ffffff;
-    background: #fff;
-    margin: 0 5px;
-    transition: .5s;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.container .card .contentBx .size span:hover {  /* other bug */
-    background: #B90000;
-}
-
-.container .card .contentBx .color span {
-    width: 20px;
-    height: 20px;
-    background: #ff0;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.container .card .contentBx .color span:nth-child(2) {
-     background: #1BBFE9;
-}
-
-.container .card .contentBx .color span:nth-child(3) {
-     background: #1B2FE9;
-}
-
-.container .card .contentBx .color span:nth-child(4) {
-     background: #080481;
-}
-
-.container .card .contentBx .cart-icon {
+.cart-icon {
     display: inline-block;
     padding: 10px 20px;
     background: #fff;
     border-radius: 4px;
     margin-top: 10px;
-    text-decoration: none;
     font-weight: 600;
     color: #111;
     opacity: 0;
     transform: translateY(50px);
     transition: .5s;
+    cursor: pointer;
 }
 
-.container .card:hover .contentBx .cart-icon {
+.card:hover .contentBx .cart-icon {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: .7s;
-}
-
-.cart-icon {
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-  
-.circle-button:hover .cart-icon {
-    transform: scale(1.2);
 }

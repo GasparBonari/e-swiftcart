@@ -3,7 +3,18 @@ import ProductSlider from '../ProductSlider/ProductSlider';
 import { FaCartPlus } from 'react-icons/fa';
 import '../../styles/productCard.css';
 
-function ProductCard({ product }) {
+function ProductCard({ product, addToCart }) {
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      images: product.images,
+      title: product.title,
+      price: product.price,
+      quantity: 1,
+    });
+  };
+
   return (
     <div className="card" key={product.id}>
       <div className="imgBx">
@@ -12,8 +23,8 @@ function ProductCard({ product }) {
 
       <div className="contentBx">
         <h2>{product.title}</h2>
-        <div className="size">${product.price}</div>
-        <FaCartPlus className="cart-icon" />
+        <div className="price">${product.price}</div>
+        <FaCartPlus onClick={handleAddToCart} className="cart-icon" />
       </div>
     </div>
   );

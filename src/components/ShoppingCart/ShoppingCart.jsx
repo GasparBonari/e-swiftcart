@@ -4,6 +4,9 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './shoppingCart.css';
 
 const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
+
+  const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
   return (
     <div className="shopping-cart">
       <div className="cart-header">
@@ -20,7 +23,7 @@ const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
                 <div className="cart-item">
                   <img src={item.images[0]} alt={item.title} className="cart-item-image" />
                   <span className="cart-item-title">{item.title}</span>
-                  <span className="cart-item-price">${item.price}</span>
+                  <span className="cart-item-price">${item.price * item.quantity}</span>
                   {item.quantity > 1 && <span className="cart-item-quantity">Qty: {item.quantity}</span>}
                 </div>
                 <div className="delete-button-container">
@@ -32,7 +35,7 @@ const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
         )}
       </div>
       <div className="cart-footer">
-        {/* Add additional cart summary information if needed */}
+        {cartItems.length > 0 && <p>Total: ${totalAmount}</p>}
       </div>
     </div>
   );

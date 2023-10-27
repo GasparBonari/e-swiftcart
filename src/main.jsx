@@ -29,10 +29,6 @@ const App = () => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
-
   const onCloseProductDetails = () => {
     setSelectedProduct(null);
   };
@@ -46,7 +42,7 @@ const App = () => {
     const existingProductIndex = cartItems.findIndex(
       (item) => item.id === product.id
     );
-
+  
     if (existingProductIndex !== -1) {
       // If the product exists, update the quantity
       const updatedCart = [...cartItems];
@@ -77,7 +73,7 @@ const App = () => {
           <Route path="/contact" element={<ContactUs />} />
           <Route
             path="/products"
-            element={<Products onProductClick={handleProductClick} />}
+            element={<Products addToCart={addToCart}/>}
           />
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
@@ -91,7 +87,6 @@ const App = () => {
           />
         )}
 
-        {/* Conditionally render the ShoppingCart */}
         {shoppingCartVisible && (
           <ShoppingCart 
             cartItems={cartItems}
