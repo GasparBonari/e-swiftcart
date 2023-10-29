@@ -10,6 +10,7 @@ import ShoppingCart from './components/ShoppingCart/ShoppingCart.jsx';
 import Products from './pages/Products';
 import About from './pages/About';
 import ContactUs from './pages/ContactUs';
+import GoToTop from './components/GoToTop/GoToTop';
 
 const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -78,6 +79,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home addToCart={addToCart} />} />
         </Routes>
+
+        <GoToTop/>
 
         {selectedProduct && (
           <ProductDetails 

@@ -1,0 +1,24 @@
+.scroll-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff; /* Change the background color */
+    color: #fff; /* Change the text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    /* Additional styles for better visibility */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top-button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+}
+
+/* Show the button when it's visible */
+.scroll-to-top-button.show {
+    display: inline-block;
+}
