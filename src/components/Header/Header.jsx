@@ -1,10 +1,13 @@
 import React from 'react';
 import './header.css';
+import imgBackground from "../../images/background.jpg"
 
 function Header()
 {
   return (
     <header className="header-container background-fixed">
+
+      <img className='background-img' src={imgBackground}></img>
 
       <div id="background-wrap">
           <div className="x1">
@@ -28,12 +31,16 @@ function Header()
           </div>
       </div>
 
-      <div className="header-content">
-        <h1>SwiftCart</h1>
-        <p className="header-p">The web to find any product you want</p>
-        <div className="button-container">
-          <button>Find Out</button>
-          <button>About Us</button>
+      <div className="header-title">
+        <div className="title-wrapper">
+          <h1 className="swift-title">
+            <span data-text="Swift">Swift</span>
+            <span data-text="Cart">Cart</span>
+          </h1>
+          <div className='container-btns-header'>
+            <button className='btn-3d btn-header'>Find Out</button>
+            <button className='btn-3d btn-header'>About Us</button>
+          </div>
         </div>
       </div>
     </header>

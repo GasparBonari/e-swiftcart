@@ -25,7 +25,7 @@ function Footer()
           <h3>Subscribe to Our Newsletter</h3>
           <div className="subscribe-form">
             <input type="email" placeholder="Your Email..." />
-            <button>Subscribe</button>
+            <button className='btn-3d'>Subscribe</button>
           </div>
         </div>
       </div>

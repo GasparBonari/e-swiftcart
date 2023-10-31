@@ -30,9 +30,7 @@ const GoToTop = () => {
   return (
     <div>
       {isVisible && (
-        <button onClick={scrollToTop} className="scroll-to-top-button">
-          Go to Top
-        </button>
+        <button onClick={scrollToTop} className="scroll-to-top-btn"><span className='emoji'>☝️</span></button>
       )}
     </div>
   );

@@ -136,10 +136,12 @@
   padding: 10px;
   margin-right: 10px;
   font-size: 16px;
+  border-radius: 10px;
 }
 
 .product-tabs button:hover {
-  background-color: yellow;
+  background-color: #f5e070;
+  border-radius: 10px;
 }
 
 .product-tabs button.active {
@@ -213,7 +215,6 @@
 .review-form button:hover {
   background-color: #0056b3;
 }
-
 
 /* add to cart button animation */
 

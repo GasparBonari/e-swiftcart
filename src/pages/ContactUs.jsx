@@ -54,7 +54,7 @@ function ContactUs()
                     </div>
                 
                     <div>
-                        <button type="submit" className="btn btn-primary" tabIndex="-1">Send message</button>
+                        <button type="submit" className="btn-3d" tabIndex="-1">Send message</button>
                     </div>
                 </form>
 
