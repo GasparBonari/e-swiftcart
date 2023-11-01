@@ -111,8 +111,7 @@ h2{
     font-size: 20px;
 }
 
-.price,
-.cart-icon {
+.price{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,33 +122,26 @@ h2{
     color: white;
 }
 
-.card:hover .contentBx .price {
+.card:hover .price {
     opacity: 1;
     visibility: visible;
     transition-delay: .5s;
 }
 
-.card:hover .contentBx .cart-icon {
+.cart-icon {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+    visibility: hidden;
+}
+
+.card:hover .cart-icon {
     opacity: 1;
     visibility: visible;
     transition-delay: .6s;
 }
 
-.cart-icon {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #fff;
-    border-radius: 4px;
-    margin-top: 10px;
-    font-weight: 600;
-    color: #111;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: .5s;
-    cursor: pointer;
-}
-
-.card:hover .contentBx .cart-icon {
+.card:hover .cart-icon {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: .7s;

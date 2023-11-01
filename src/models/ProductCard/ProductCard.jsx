@@ -24,7 +24,7 @@ function ProductCard({ product, addToCart }) {
       <div className="contentBx">
         <h2>{product.title}</h2>
         <div className="price">${product.price}</div>
-        <FaCartPlus onClick={handleAddToCart} className="cart-icon" />
+        <button className='btn-3d cart-icon' onClick={handleAddToCart}><FaCartPlus /></button>
       </div>
     </div>
   );

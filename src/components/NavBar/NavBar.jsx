@@ -71,10 +71,7 @@ function Navbar({ toggleShoppingCart, cartItemsCount }) {
 
       <div className='right-side'>
         {/* Show cart item count and handle click event */}
-        <div 
-          className='checkout-bag' 
-          onClick={toggleShoppingCart}
-        >
+        <div className='checkout-bag' onClick={toggleShoppingCart}>
           <FontAwesomeIcon icon={faShoppingBag} />
           <span className='item-count'>{cartItemsCount}</span>
         </div>

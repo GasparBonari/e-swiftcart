@@ -10,6 +10,7 @@
   height: 93vh;
   z-index: 99999;
   animation: slideIn 0.5s ease forwards;
+  overflow-y: auto;
 }
 
 @keyframes slideIn {
@@ -41,7 +42,6 @@
 }
 
 .cart-items {
-  max-height: 200px;
   margin-top: 30px;
 }
 
