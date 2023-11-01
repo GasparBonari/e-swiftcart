@@ -16,7 +16,7 @@
     line-height: 20px;
     margin: 0 5px 10px 0;
     overflow: visible;
-    padding: 12px 40px;
+    padding: 7px 20px;
     text-align: center;
     text-transform: none;
     touch-action: manipulation;
@@ -36,8 +36,19 @@
     transform: translate(2px, 2px);
 }
 
-@media (min-width: 768px) {
-    .scroll-to-top-btn {
-        padding: 12px 50px;
+.emoji {
+    display: inline-block;
+}
+
+.scroll-to-top-btn:hover .emoji {
+    animation: moveUpDown 0.5s infinite;
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+    transform: translateY(5px);
+    }
+    50% {
+    transform: translateY(-5px);
     }
 }

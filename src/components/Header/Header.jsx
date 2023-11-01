@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import './header.css';
 import imgBackground from "../../images/background.jpg"
 
@@ -38,8 +40,13 @@ function Header()
             <span data-text="Cart">Cart</span>
           </h1>
           <div className='container-btns-header'>
-            <button className='btn-3d btn-header'>Find Out</button>
-            <button className='btn-3d btn-header'>About Us</button>
+            <ScrollLink to="carousel-container" smooth={true} duration={500}>
+              <button className='btn-3d btn-header'>Find Out</button>
+            </ScrollLink>
+
+            <Link to="/about">
+              <button className='btn-3d btn-header'>About Us</button>
+            </Link>
           </div>
         </div>
       </div>

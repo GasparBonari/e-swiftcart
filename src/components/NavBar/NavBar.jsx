@@ -42,7 +42,7 @@ function Navbar({ toggleShoppingCart, cartItemsCount }) {
     <nav className="navbar">
       <div className="navbar-brand">
         <Link to="/">
-          <img src={Logo} alt="Logo" />
+          <img src={Logo} className='logo-img' alt="Logo" />
         </Link>
       </div>
       

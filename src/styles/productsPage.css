@@ -1,6 +1,22 @@
+:root {
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+}
+
+
+.products-image {
+  position: relative;
+  height: 70vh;
+  z-index: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/src/images/products-page.jpg");
+  background-attachment: fixed;
+  background-position-y: 0;
+}
+
 .flex-container {
   display: flex;
-  margin-top: 120px;
+  margin-top: 45px;
 }
 
 .navigation-container {
@@ -16,15 +32,41 @@
 }
 
 .navigation p.selected {
-  background-color: #f8ff97;
+  background-color: #f5e16e;
+  border-radius: 5px;
 }
 
 .list-products{
   display: flex;
   flex-direction: column;
   width: 90%;
+  gap: 20px;
 }
+
+
+/* sort */
 
 .sort-container{
   margin-left: 20px;
+}
+
+select {
+  border: 0;
+  outline: 0;
+  font: inherit;
+  width: 20rem;
+  padding: 10px 14px;
+  background: var(--arrow-icon) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgb(244 125 93) 3em, rgba(255, 255, 255, 0.2) 3em);
+  color: rgb(244 125 93);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+}
+
+select option {
+  background-color: rgba(255, 255, 255, 0);
 }
