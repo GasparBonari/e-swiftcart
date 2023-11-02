@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/index.css';
-import Home from './pages/Home.jsx';
+import ProductDetails from './models/ProductDetails/ProductDetails.jsx';
 import Navbar from './components/NavBar/NavBar.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import ProductDetails from './models/ProductDetails/ProductDetails.jsx';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart.jsx';
+import GoToTop from './components/GoToTop/GoToTop';
+import Checkout from './pages/Checkout';
 import Products from './pages/Products';
 import About from './pages/About';
 import ContactUs from './pages/ContactUs';
-import GoToTop from './components/GoToTop/GoToTop';
+import Home from './pages/Home.jsx';
 
 const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -70,6 +71,7 @@ const App = () => {
           />
 
         <Routes>
+          <Route path="/checkout" element={<Checkout cartItems={cartItems}/>} />
           <Route path="/product/:id" element={<ProductDetails addToCart={addToCart} />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route

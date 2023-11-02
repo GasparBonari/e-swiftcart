@@ -64,11 +64,6 @@
   overflow: hidden;
 }
 
-.cart-footer {
-  margin-top: 10px;
-  text-align: right;
-}
-
 .cart-item {
   display: flex;
   align-items: center;
@@ -121,5 +116,16 @@
   color: #ffffff;
   border: none;
   padding: 50px 10px;
+  cursor: pointer;
+}
+
+.cart-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-btn{
   cursor: pointer;
 }

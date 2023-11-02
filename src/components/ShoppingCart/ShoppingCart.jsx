@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './shoppingCart.css';
@@ -35,7 +36,14 @@ const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
         )}
       </div>
       <div className="cart-footer">
-        {cartItems.length > 0 && <p>Total: ${totalAmount}</p>}
+        {cartItems.length > 0 && (
+          <>
+            <p>Total: ${totalAmount}</p>
+            <Link to="/checkout">
+              <button className='btn-3d'>Checkout</button>
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
