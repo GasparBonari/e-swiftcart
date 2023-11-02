@@ -168,6 +168,10 @@ li a{
     color: #ff5733;
 }
 
+.checkout-bag:hover .item-count {
+    background-color: #ff5733;
+}
+
 .navbar-search {
     display: flex;
     align-items: center;

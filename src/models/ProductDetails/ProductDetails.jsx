@@ -112,7 +112,7 @@ const ProductDetails = ({ addToCart }) => {
   };
 
   if (!productDetails) {
-    return <div>Loading...</div>;
+    return <div className="loading"></div>
   }
 
   return (
