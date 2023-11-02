@@ -21,6 +21,17 @@ h2{
     cursor: grabbing;
 }
 
+.second-title {
+    transform: skew(-12deg);
+    grid-area: text;
+    font-size: 60px;
+    margin: 0;
+    padding: 30px;
+    color: #f5e16e;
+    text-shadow: 3px 3px 0 #415c9c, -3px -3px 0 #f47d5d;
+    text-transform: uppercase;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;

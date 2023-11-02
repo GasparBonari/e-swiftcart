@@ -9,7 +9,7 @@ function LatestProducts({ products, addToCart }) {
 
   return (
     <>
-      <h2>Latest Products</h2>
+      <h2 className='second-title'>Latest Products</h2>
       <div className="container">
         {last12Products.map(product => 
           <ProductCard key={product.id} product={product} addToCart={addToCart} />

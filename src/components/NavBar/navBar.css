@@ -230,7 +230,8 @@ li a{
 @media (max-width: 768px) {
     .navbar-links,
     .navbar-search,
-    .checkout-bag {
+    .checkout-bag,
+    .right-side {
         display: none;
     }
 
