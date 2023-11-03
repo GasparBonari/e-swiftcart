@@ -106,3 +106,17 @@ h1{
     0% {transform: translateX(0)}
     100% {transform: translateX(200%)}
 }
+
+
+/* Media Query */
+
+@media (max-width: 768px) {
+    .container-about{
+        height: 130vh;
+        flex-direction: column;
+    }
+
+    .image-container {
+        margin: 20px;
+    }
+}

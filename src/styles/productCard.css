@@ -157,3 +157,12 @@ h2{
     transform: translateY(0px);
     transition-delay: .7s;
 }
+
+
+/* Mobile Query */
+
+@media (max-width: 768px) {
+    .container{
+        justify-content: center;
+    }
+}

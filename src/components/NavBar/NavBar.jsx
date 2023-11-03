@@ -38,6 +38,18 @@ function Navbar({ toggleShoppingCart, cartItemsCount }) {
     product.title && product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Handle the scroll behavior
+  const handleScroll = () => {
+    document.body.style.overflowY = menuVisible ? 'hidden' : 'visible';
+  };
+
+  useEffect(() => {
+    handleScroll();
+    return () => {
+      document.body.style.overflowY = 'visible';
+    };
+  }, [menuVisible]);
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -60,7 +72,11 @@ function Navbar({ toggleShoppingCart, cartItemsCount }) {
       )}
 
       {/* Render the MobileMenu component */}
-      <MobileMenu isOpen={menuVisible} onClose={toggleMenu} />
+      <MobileMenu
+        isOpen={menuVisible} 
+        onClose={toggleMenu}
+        products={products}
+      />
 
       <ul className={`navbar-links ${menuVisible ? 'hide' : ''}`}>
         <li><a href="/">Home</a></li>
@@ -93,7 +109,7 @@ function Navbar({ toggleShoppingCart, cartItemsCount }) {
                 {filteredProducts.map(product => (
                 <li key={product.id}>
                   {/* Link to the product page */}
-                  <a href={`/product/${product.id}`} onClick={() => handleProductClick(product)}>
+                  <a href={`/product/${product.id}`}>
                     {product.title}
                   </a>
                 </li>

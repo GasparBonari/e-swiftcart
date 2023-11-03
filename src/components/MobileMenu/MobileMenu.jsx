@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
-function MobileMenu({ isOpen, onClose }) {
+function MobileMenu({ isOpen, onClose, products }) {
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredProducts = products.filter(product =>
+    product.title && product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
       <ul>
@@ -10,14 +17,31 @@ function MobileMenu({ isOpen, onClose }) {
         <li><a href="/products">Products</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
+        <FontAwesomeIcon icon={faShoppingBag}/>
       </ul>
-
-      <FontAwesomeIcon icon={faShoppingBag}/>
       
       <div className="mobile-search">
-        <input type="text" placeholder="Search" />
-        <button type="submit"><i className="fas fa-search"></i></button>
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
+
+      {searchTerm && (
+        <div className="product-list-mobile">
+          <ul>
+            {filteredProducts.map(product => (
+            <li key={product.id}>
+              <a href={`/product/${product.id}`}>
+                {product.title}
+              </a>
+            </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

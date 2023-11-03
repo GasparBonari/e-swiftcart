@@ -2,7 +2,6 @@
   --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
 }
 
-
 .products-image {
   position: relative;
   height: 70vh;
@@ -69,4 +68,17 @@ select:focus {
 
 select option {
   background-color: rgba(255, 255, 255, 0);
+}
+
+/* Media Query */
+
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  select{
+    width: 13rem;
+  }
 }
