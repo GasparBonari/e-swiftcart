@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,7 +18,9 @@ function MobileMenu({ isOpen, onClose, products }) {
         <li><a href="/products">Products</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
-        <FontAwesomeIcon icon={faShoppingBag}/>
+        <Link to="/checkout" onClick={() => onClose()}>
+          <FontAwesomeIcon icon={faShoppingBag}/>
+        </Link>
       </ul>
       
       <div className="mobile-search">
