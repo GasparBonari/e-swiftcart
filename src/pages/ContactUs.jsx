@@ -4,8 +4,8 @@ import ContactPhone from '../images/contactUs.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-function ContactUs()
-{
+function ContactUs() {
+    const embedCode = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64879.14975145277!2d13.455923214675094!3d52.50524854728093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x26bbfb4e84674c63!2sBrandenburg%20Gate!5e0!3m2!1sen!2sde!4v1697123362548!5m2!1sen!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,11 +21,7 @@ function ContactUs()
           window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
-
-    const embedCode = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64879.14975145277!2d13.455923214675094!3d52.50524854728093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x26bbfb4e84674c63!2sBrandenburg%20Gate!5e0!3m2!1sen!2sde!4v1697123362548!5m2!1sen!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
  
-
     return(
         <>
             <div className="contact-image"></div>

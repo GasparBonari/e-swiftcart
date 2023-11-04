@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import CheckoutImage from '../images/checkout.png';
 import '../styles/checkoutPage.css';
 
 const Checkout = ({ cartItems }) => {
@@ -11,6 +12,21 @@ const Checkout = ({ cartItems }) => {
 
   const totalAmount = cartItems.reduce((acc, item) => acc + item.price, 0);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const parallaxValue = scrollPosition * 1.5;
+
+      document.querySelector('.checkout-image').style.backgroundPositionY = `-${parallaxValue}px`;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -20,8 +36,15 @@ const Checkout = ({ cartItems }) => {
   };
 
   return (
-    <div className="checkout-container">
-        <div className="checkout-form">
+    <>
+      <div className="checkout-image"></div>
+
+      <div className='checkout-main'>
+
+        <img src={CheckoutImage}></img>
+
+        <div className="checkout-container">
+          <div className="checkout-form">
             <h2>Shipping Information</h2>
             <form>
             <label>Name:</label>
@@ -36,35 +59,36 @@ const Checkout = ({ cartItems }) => {
             <label>Phone Number:</label>
             <input type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} required />
             </form>
-        </div>
+          </div>
 
-        <div className="order-summary">
+          <div className="order-summary">
             <h2>Order Summary</h2>
             <table>
-            <thead>
-                <tr>
-                <th>Product</th>
-                <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                {cartItems.map((item) => (
-                <tr key={item.id}>
-                    <td>{item.title}</td>
-                    <td>${item.price}</td>
-                </tr>
-                ))}
-                <tr>
-                    <td>Shipping</td>
-                    <td>Free</td>
-                </tr>
-            </tbody>
+              <thead>
+                  <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {cartItems.map((item) => (
+                  <tr key={item.id}>
+                      <td>{item.title}</td>
+                      <td>${item.price}</td>
+                  </tr>
+                  ))}
+                  <tr>
+                      <td>Shipping</td>
+                      <td>Free</td>
+                  </tr>
+              </tbody>
             </table>
             <p>Total: ${totalAmount}</p>
-
             <button className="btn-3d">Place Order</button>
+          </div>
         </div>
-    </div>
+      </div>
+    </>
   );
 };
 

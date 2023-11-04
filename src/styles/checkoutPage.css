@@ -1,12 +1,31 @@
+.checkout-image{
+    position: relative;
+    height: 70vh;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/src/images/header-checkout.jpg");
+    background-attachment: fixed;
+    background-position-y: 0;
+}
+
+.checkout-main{
+    display: flex;
+    align-items: center;
+}
+
+.checkout-main img{
+    margin-left: 50px;
+}
+
 .checkout-container {
     display: flex;
     justify-content: space-between;
     max-width: 800px;
-    margin: 40px auto;
+    margin: 80px auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin-top: 150px;
     gap: 30px;
 }
 
@@ -60,4 +79,16 @@
 
 .order-summary th {
     background-color: #f2f2f2;
+}
+
+/* Media Query */
+
+@media (max-width: 990px) {
+    .checkout-main{
+        flex-direction: column;
+    }
+
+    .checkout-main img{
+        margin: 0;
+    }
 }
