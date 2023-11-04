@@ -12,6 +12,7 @@ import Products from './pages/Products';
 import About from './pages/About';
 import ContactUs from './pages/ContactUs';
 import Home from './pages/Home.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -80,6 +81,8 @@ const App = () => {
           />
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home addToCart={addToCart} />} />
+
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
 
         <GoToTop/>

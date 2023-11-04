@@ -21,3 +21,16 @@ body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
 }
+
+/* error page */
+
+.errorPage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px;
+}
+
+.errorPage img{
+  width: 300px;
+}
