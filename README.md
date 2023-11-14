@@ -54,8 +54,8 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
-Thank you for checking out E-SwiftCart! If you have any questions or suggestions, feel free to open an issue or contact us. Happy shopping!
+Thank you for checking out E-SwiftCart! If you have any questions or suggestions, feel free to open an issue.
