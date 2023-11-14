@@ -19,9 +19,9 @@ E-SwiftCart is an e-commerce platform designed to simplify online shopping. Leve
 
 ## Technologies
 
-🧠 **ReactJS**
-🎨 **CSS**
-🖌️ **Bootstrap**
+🧠 **ReactJS**  
+🎨 **CSS**  
+🖌️ **Bootstrap**  
 
 ## Features
 
