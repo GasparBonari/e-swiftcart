@@ -13,6 +13,7 @@ import About from './pages/About';
 import ContactUs from './pages/ContactUs';
 import Home from './pages/Home.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
+import WebSocketComponent from './components/WebSocket.jsx';
 
 const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -102,6 +103,8 @@ const App = () => {
             deleteFromCart={deleteFromCart}
           />
         )}
+
+        <WebSocketComponent/>
 
         <Footer />
       </Router>
