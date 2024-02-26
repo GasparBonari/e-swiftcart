@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/index.css';
@@ -14,6 +15,10 @@ import ContactUs from './pages/ContactUs';
 import Home from './pages/Home.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import WebSocketComponent from './components/WebSocket.jsx';
+import { AuthProvider } from './components/AuthContext';  // Import AuthProvider
+import Login from './components/Login';  // Import Login component
+
+const socket = io('http://localhost:5000');
 
 const App = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -67,46 +72,49 @@ const App = () => {
   return (
     <React.StrictMode>
       <Router>
-        <Navbar 
+        <AuthProvider>
+          <Navbar 
             toggleShoppingCart={toggleShoppingCart} 
             cartItemsCount={cartItems.length} 
           />
 
-        <Routes>
-          <Route path="/checkout" element={<Checkout cartItems={cartItems}/>} />
-          <Route path="/product/:id" element={<ProductDetails addToCart={addToCart} />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route
-            path="/products"
-            element={<Products addToCart={addToCart}/>}
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/" element={<Home addToCart={addToCart} />} />
+          <Routes>
+            <Route path="/checkout" element={<Checkout cartItems={cartItems}/>} />
+            <Route path="/product/:id" element={<ProductDetails addToCart={addToCart} />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route
+              path="/products"
+              element={<Products addToCart={addToCart}/>}
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/" element={<Home addToCart={addToCart} />} />
 
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
 
-        <GoToTop/>
+          <GoToTop/>
 
-        {selectedProduct && (
-          <ProductDetails 
-            product={selectedProduct} 
-            addToCart={addToCart} 
-            onClose={onCloseProductDetails} 
-          />
-        )}
+          {selectedProduct && (
+            <ProductDetails 
+              product={selectedProduct} 
+              addToCart={addToCart} 
+              onClose={onCloseProductDetails} 
+            />
+          )}
 
-        {shoppingCartVisible && (
-          <ShoppingCart 
-            cartItems={cartItems}
-            toggleShoppingCart={toggleShoppingCart}
-            deleteFromCart={deleteFromCart}
-          />
-        )}
+          {shoppingCartVisible && (
+            <ShoppingCart 
+              cartItems={cartItems}
+              toggleShoppingCart={toggleShoppingCart}
+              deleteFromCart={deleteFromCart}
+            />
+          )}
 
-        <WebSocketComponent/>
+          <WebSocketComponent socket={socket} />
+          {/* <Login socket={socket} /> */}
 
-        <Footer />
+          <Footer />
+        </AuthProvider>
       </Router>
     </React.StrictMode>
   );

@@ -1,31 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuth } from './AuthContext';
 import io from 'socket.io-client';
 
 const WebSocketComponent = () => {
-    useEffect(() => {
-        // Connect to the WebSocket server (your Flask backend)
-        const socket = io('http://localhost:5000'); // Adjust the URL accordingly
+  const { user } = useAuth();
+  const [socket, setSocket] = useState(null);
 
-        // Send a message to the backend
-        socket.emit('message_from_frontend', 'Hello from the frontend');
+  useEffect(() => {
+    if (user) {
+      const newSocket = io('http://localhost:5000');
+      setSocket(newSocket);
+      return () => newSocket.close();
+    }
+  }, [user]);
 
-        // Listen for messages from the backend
-        socket.on('message_from_backend', (message) => {
-            console.log('Message from backend:', message);
-            // Process the message as needed
-        });
+  useEffect(() => {
+    if (socket) {
+      socket.on('login', (response) => {
+        console.log('Login response from backend:', response);
+        // Process the response as needed
+      });
+    }
+  }, [socket]);
 
-        // Clean up the socket connection when the component unmounts
-        return () => {
-            socket.disconnect();
-        };
-    }, []);
-
-    // return (
-    //     <div>
-    //         <h1>Hello from Websocket</h1>
-    //     </div>
-    // );
+  // You can include any additional content or UI related to WebSocket here
+  return null; // Since WebSocketComponent doesn't render any UI
 };
 
 export default WebSocketComponent;
