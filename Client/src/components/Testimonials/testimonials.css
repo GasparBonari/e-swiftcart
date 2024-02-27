@@ -86,3 +86,12 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .testimonial-container{
+    height: 300px;
+  }
+  .slick-dots{
+    opacity: 0;
+  }
+}
