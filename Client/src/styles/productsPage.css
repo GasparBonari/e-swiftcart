@@ -35,6 +35,12 @@
   border-radius: 5px;
 }
 
+.navigation p:not(.selected):hover {
+  background-color: rgba(128, 128, 128, 0.689);
+  border-radius: 5px;
+  color: white;
+}
+
 .list-products{
   display: flex;
   flex-direction: column;

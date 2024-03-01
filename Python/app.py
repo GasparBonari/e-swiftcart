@@ -15,7 +15,7 @@ users = [
     {"username": "user1", "password": bcrypt.generate_password_hash("user1").decode('utf-8'), "role": "user"}
 ]
 
-# Secret key for session management (replace with a secure, random key)
+# Secret key for session management
 app.config['SECRET_KEY'] = 'hello123'
 
 @socketio.on('login')
