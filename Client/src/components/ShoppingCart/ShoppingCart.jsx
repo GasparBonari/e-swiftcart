@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,20 @@ import './shoppingCart.css';
 const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
 
   const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if(event.key === "Escape"){
+        toggleShoppingCart();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [toggleShoppingCart])
 
   return (
     <div className="shopping-cart">
