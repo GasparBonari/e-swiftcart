@@ -16,7 +16,7 @@ const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
       </div>
       <div className="cart-items">
         {cartItems.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <p>Your cart is empty 🛒</p>
         ) : (
           <ul>
             {cartItems.map((item, index) => (
