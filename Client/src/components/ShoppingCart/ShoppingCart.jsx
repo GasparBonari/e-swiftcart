@@ -22,6 +22,11 @@ const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
     }
   }, [toggleShoppingCart])
 
+  const getFirstTwoWords = (title) => {
+    const words = title.split(" ");
+    return words.slice(0, 2). join(" ");
+  }
+
   return (
     <div className="shopping-cart">
       <div className="cart-header">
@@ -37,7 +42,7 @@ const ShoppingCart = ({ cartItems, toggleShoppingCart, deleteFromCart }) => {
               <li key={index} className="cart-item-container">
                 <div className="cart-item">
                   <img src={item.images[0]} alt={item.title} className="cart-item-image" />
-                  <span className="cart-item-title">{item.title}</span>
+                  <span className="cart-item-title">{getFirstTwoWords(item.title)}</span>
                   <span className="cart-item-price">${item.price * item.quantity}</span>
                   {item.quantity > 1 && <span className="cart-item-quantity">Qty: {item.quantity}</span>}
                 </div>

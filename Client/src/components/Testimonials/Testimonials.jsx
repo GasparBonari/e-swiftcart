@@ -45,8 +45,25 @@ function TestimonialSlider(){
     variableWidth: true,
   };
 
+  const handleMouseDown = () => {
+    document.querySelector(".testimonial-container").style.cursor = "grabbing";
+  };
+
+  const handleMouseUp = () => {
+    document.querySelector(".testimonial-container").style.cursor = "grab";
+  };
+
+  const handleMouseLeave = () => {
+    document.querySelector(".testimonial-container").style.cursor = "grab";
+  };
+
   return (
-    <div className="testimonial-container">
+    <div
+      className="testimonial-container"
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+    >
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
           <Testimonial key={index} {...testimonial} />
