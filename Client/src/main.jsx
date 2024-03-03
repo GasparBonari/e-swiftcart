@@ -113,10 +113,10 @@ const App = () => {
 
           <WebSocketComponent socket={socket} />
 
-          <Register socket={socket} />
+          {/* <Register socket={socket} />
 
-          <Login socket={socket} />
-          
+          <Login socket={socket} /> */}
+
           <Footer />
         </AuthProvider>
       </Router>

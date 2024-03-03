@@ -26,26 +26,7 @@ class User(db.Model):
     password = db.Column(db.String(60), nullable=False)
     role = db.Column(db.String(20), nullable=False)
 
-# # Use app context to create tables and add users
-# with app.app_context():
-#     # Create the database tables
-#     db.create_all()
-
-#     # Hash passwords
-#     hashed_password1 = bcrypt.generate_password_hash('password1').decode('utf-8')
-#     hashed_password2 = bcrypt.generate_password_hash('password2').decode('utf-8')
-#     hashed_admin_password = bcrypt.generate_password_hash('admin_password').decode('utf-8')
-
-#     # Create users with hashed passwords
-#     user1 = User(username='user1', password=hashed_password1, role='user')
-#     user2 = User(username='user2', password=hashed_password2, role='user')
-#     admin = User(username='admin', password=hashed_admin_password, role='admin')
-
-#     # Add users to the database
-#     db.session.add_all([user1, user2, admin])
-#     db.session.commit()
-
-# print('Users added successfully.')
+# user1 = password1, also 2 and 3.
     
 @socketio.on('register')
 def handle_register(data):
