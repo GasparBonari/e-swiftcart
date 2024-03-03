@@ -17,6 +17,7 @@ import ErrorPage from './pages/ErrorPage.jsx';
 import WebSocketComponent from './components/WebSocket.jsx';
 import { AuthProvider } from './components/AuthContext';  // Import AuthProvider
 import Login from './components/Login';  // Import Login component
+import Register from './components/Register.jsx';
 
 const socket = io('http://localhost:5000');
 
@@ -111,8 +112,11 @@ const App = () => {
           )}
 
           <WebSocketComponent socket={socket} />
-          {/* <Login socket={socket} /> */}
 
+          <Register socket={socket} />
+
+          <Login socket={socket} />
+          
           <Footer />
         </AuthProvider>
       </Router>

@@ -2,34 +2,84 @@ from flask import Flask, request, jsonify, session
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
-from decorators import admin_required 
+from decorators import admin_required
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 CORS(app, origins="*")
 socketio = SocketIO(app, cors_allowed_origins="*")
 bcrypt = Bcrypt(app)
 
-# Mock user data (replace with database storage)
-users = [
-    {"username": "admin", "password": bcrypt.generate_password_hash("admin").decode('utf-8'), "role": "admin"},
-    {"username": "user1", "password": bcrypt.generate_password_hash("user1").decode('utf-8'), "role": "user"}
-]
+# Configure the PostgreSQL database URI
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://vhxwrrdf:OCUjI8Rr_8DOg-PlBdZM9YdUtDFoFwak@surus.db.elephantsql.com/vhxwrrdf'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Secret key for session management
 app.config['SECRET_KEY'] = 'hello123'
+
+db = SQLAlchemy(app)
+
+# User model
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
+    role = db.Column(db.String(20), nullable=False)
+
+# # Use app context to create tables and add users
+# with app.app_context():
+#     # Create the database tables
+#     db.create_all()
+
+#     # Hash passwords
+#     hashed_password1 = bcrypt.generate_password_hash('password1').decode('utf-8')
+#     hashed_password2 = bcrypt.generate_password_hash('password2').decode('utf-8')
+#     hashed_admin_password = bcrypt.generate_password_hash('admin_password').decode('utf-8')
+
+#     # Create users with hashed passwords
+#     user1 = User(username='user1', password=hashed_password1, role='user')
+#     user2 = User(username='user2', password=hashed_password2, role='user')
+#     admin = User(username='admin', password=hashed_admin_password, role='admin')
+
+#     # Add users to the database
+#     db.session.add_all([user1, user2, admin])
+#     db.session.commit()
+
+# print('Users added successfully.')
+    
+@socketio.on('register')
+def handle_register(data):
+    username = data['username']
+    password = data['password']
+
+    # Check if the username is already taken
+    existing_user = User.query.filter_by(username=username).first()
+    if existing_user:
+        emit('register_response', {'success': False, 'message': 'Username already taken'})
+    else:
+        # If the username is available, hash the password and create a new user
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        new_user = User(username=username, password=hashed_password, role='user')
+
+        # Add the new user to the database
+        db.session.add(new_user)
+        db.session.commit()
+
+        emit('register_response', {'success': True, 'message': 'Registration successful'})
 
 @socketio.on('login')
 def handle_login(data):
     username = data['username']
     password = data['password']
 
-    user = next((user for user in users if user['username'] == username), None)
+    user = User.query.filter_by(username=username).first()
 
-    if user and bcrypt.check_password_hash(user['password'], password):
+    if user and bcrypt.check_password_hash(user.password, password):
         session['username'] = username
-        emit('login_response', {'success': True, 'message': 'Login successful', 'user': {'username': username, 'role': user['role']}})
+        emit('login_response', {'success': True, 'message': 'Login successful', 'user': {'username': username, 'role': user.role}})
     else:
         emit('login_response', {'success': False, 'message': 'Invalid credentials'})
+
 
 @socketio.on('logout')
 def handle_logout():
@@ -38,6 +88,7 @@ def handle_logout():
         emit('logout_response', {'success': True, 'message': 'Logout successful'})
     else:
         emit('logout_response', {'success': False, 'message': 'User not logged in'})
+
 
 @app.route('/admin_dashboard')
 @admin_required  # Apply the decorator to protect the route

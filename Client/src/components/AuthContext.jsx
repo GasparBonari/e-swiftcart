@@ -30,8 +30,21 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
+  const register = (username, password, socket) => {
+    socket.emit('register', { username, password });
+
+    socket.on('register_response', (data) => {
+      console.log('Register response from backend:', data);
+      if (data.success) {
+        // Registration successful, you may want to handle it accordingly
+      } else {
+        // Handle registration failure
+      }
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );
