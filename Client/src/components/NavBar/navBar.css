@@ -26,6 +26,17 @@
     transform: scale(1.2);
 }
 
+.user-icon{
+    font-size: 25px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+}
+
+.user-icon:hover{
+    color: #ff5733;
+    transform: scale(1.2);
+}
 
 /* Links */
 
@@ -164,7 +175,7 @@ li a{
 .right-side{
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .checkout-bag{

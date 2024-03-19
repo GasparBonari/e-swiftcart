@@ -18,12 +18,10 @@ const WebSocketComponent = () => {
     if (socket) {
       socket.on('login', (response) => {
         console.log('Login response from backend:', response);
-        // Process the response as needed
       });
     }
   }, [socket]);
 
-  // You can include any additional content or UI related to WebSocket here
   return null; // Since WebSocketComponent doesn't render any UI
 };
 

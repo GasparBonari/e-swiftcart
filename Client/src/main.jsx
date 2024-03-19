@@ -15,9 +15,11 @@ import ContactUs from './pages/ContactUs';
 import Home from './pages/Home.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import WebSocketComponent from './components/WebSocket.jsx';
-import { AuthProvider } from './components/AuthContext';  // Import AuthProvider
-import Login from './components/Login';  // Import Login component
+import { AuthProvider } from './components/AuthContext';
+import Login from './components/Login';
 import Register from './components/Register.jsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const socket = io('http://localhost:5000');
 
@@ -112,6 +114,8 @@ const App = () => {
           )}
 
           <WebSocketComponent socket={socket} />
+
+          <ToastContainer />
 
           {/* <Register socket={socket} />
 

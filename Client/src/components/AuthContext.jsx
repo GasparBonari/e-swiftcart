@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AuthContext = createContext();
 
@@ -13,7 +15,7 @@ export const AuthProvider = ({ children }) => {
         if (data.success) {
             setUser(data.user);
         } else {
-            // Handle login failure
+          toast.error('Login failed. Please try again.');
         }
     });
   };
@@ -25,7 +27,7 @@ export const AuthProvider = ({ children }) => {
       if (data.success) {
         setUser(null);
       } else {
-        // Handle logout failure
+        toast.error('Log out failed. Please try again.');
       }
     });
   };
@@ -36,9 +38,9 @@ export const AuthProvider = ({ children }) => {
     socket.on('register_response', (data) => {
       console.log('Register response from backend:', data);
       if (data.success) {
-        // Registration successful, you may want to handle it accordingly
+        toast.success('Registration successful!');
       } else {
-        // Handle registration failure
+        toast.error('User already exist! Please try again.');
       }
     });
   };

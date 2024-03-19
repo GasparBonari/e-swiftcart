@@ -7,18 +7,25 @@ import closeImage from '../../images/close.png';
 import HamburgerIcon from '../../images/hamburger-icon.png';
 import Logo from '../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons';
+import UserPopup from '../UserPopUp/UserPopUp';
+
 
 function Navbar({ toggleShoppingCart, cartItemsCount }) {
   const [menuVisible, setMenuVisible] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [popUpVisible, setPopUpVisible] = useState(false);
 
   // Function to toggle menu visibility
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
+
+  const togglePopUp = () => {
+    setPopUpVisible(!popUpVisible);
+  }
 
   // Fetch products from API when component mounts
   useEffect(() => {
@@ -87,6 +94,11 @@ function Navbar({ toggleShoppingCart, cartItemsCount }) {
 
       <div className='right-side'>
         {/* Show cart item count and handle click event */}
+        <FontAwesomeIcon className='user-icon' icon={faUser} onClick={togglePopUp}/>
+        {popUpVisible && (
+          <UserPopup onClose={togglePopUp}/>
+        )}
+
         <div className='checkout-bag' onClick={toggleShoppingCart}>
           <FontAwesomeIcon icon={faShoppingBag} />
           <span className='item-count'>{cartItemsCount}</span>
